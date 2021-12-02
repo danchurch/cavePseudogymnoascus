@@ -1,0 +1,98 @@
+## see what we can do with the reads from the cave
+
+########## install and play with qiime2 #############
+
+## it is requested that I use qiime2. Great. 
+
+## following:
+https://docs.qiime2.org/2021.11/install/native/
+
+## qiime says install in a conda environment. Fine by me, contain the beast. 
+
+wget https://data.qiime2.org/distro/core/qiime2-2021.11-py38-linux-conda.yml
+
+conda env create -n qiime2-2021.11 --file qiime2-2021.11-py38-linux-conda.yml
+
+conda activate qiime2-2021.11 
+
+## great. and to get tab completion, they have a script ready:
+
+source tab-qiime
+
+## not sure if there is some sort of rc for conda environments?
+## qiime says put it in bashrc. wait on that. 
+
+#############################
+
+## so, fiona has 16 samples?:
+
+Fiona-1
+Fiona-2
+Fiona-3
+Fiona-4
+Fiona-5
+Fiona-6
+Fiona-7
+Fiona-8
+FIona-9
+Fiona-10
+Fiona-11
+Fiona-16Euk
+Fiona-19Euk
+Fiona-20Euk
+Fiona-21Euk
+Fiona-22Euk
+
+## let's get these and remove the others.
+## and go fishing for primers...
+
+## do this in pandas
+
+python3
+import os
+import pandas as pd
+
+readDir = "/home/daniel/Documents/analyses/FionaCave/Fastq"
+
+## our read files are:
+fastqs = pd.Series(os.listdir(readDir))
+## one useful sample info spreadsheet is here
+aa = pd.read_excel('/home/daniel/Documents/analyses/FionaCave/metadata/WeigQCchecks/OeMik-Exp009_Proben.xlsx')
+## we just need those with fiona in the "Probe Id" column value, 
+## and just the "Probe Id" and "Genomics Id" columns: 
+bb = aa[["Genomics Id","Probe Id"]]
+mask = bb["Probe Id"].str.contains('Fiona').fillna(False)
+cc = bb[mask]
+
+## now, we want to go through our fasuqs series, and pull out the matches to our Genomics Id column...
+
+
+def getFN(GI):
+    mask = fastqs.str.contains(GI)
+    fn = fastqs[mask].values[0]
+    return(fn)
+
+cc['filename'] = cc['Genomics Id'].apply(getFN)
+
+cc.to_csv('fionaFileMap.csv', header=False, index=False)
+
+## and for the shell loop, just the filenames:
+
+cc['filename'].to_csv('fionaFileList', header=False, index=False)
+
+## now out to shell, to save just these files:
+
+#mkdir fionaFastqs
+ddir=/home/daniel/Documents/analyses/FionaCave/Fastq/
+fionaFastqs=/home/daniel/Documents/analyses/FionaCave/fionaFastqs
+
+for x in $(cat fionaFileList)
+do
+    mv $ddir$x $fionaFastqs
+done
+
+## time to set up a git repo for this.
+
+## git remote set-url origin git@github.com:danchurch/losCedrosTrees.git
+
+
