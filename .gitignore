@@ -1,2 +1,6 @@
 /fionaFastqs
 /otherFastqs
+/fionaFastaqsUnz
+.fastq
+*.csv#
+*.sw*

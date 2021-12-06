@@ -1,3 +1,10 @@
+### set up a git repo for this. ###
+git remote add origin https://github.com/danchurch/cavePseudogymnoascus.git
+git branch -M main
+git remote set-url origin git@github.com:danchurch/cavePseudogymnoascus.git
+git push -u origin main
+###########################################
+
 ## see what we can do with the reads from the cave
 
 ########## install and play with qiime2 #############
@@ -52,10 +59,11 @@ python3
 import os
 import pandas as pd
 
-readDir = "/home/daniel/Documents/analyses/FionaCave/Fastq"
+readDir = "/home/daniel/Documents/analyses/FionaCave/otherFastqs"
 
 ## our read files are:
 fastqs = pd.Series(os.listdir(readDir))
+
 ## one useful sample info spreadsheet is here
 aa = pd.read_excel('/home/daniel/Documents/analyses/FionaCave/metadata/WeigQCchecks/OeMik-Exp009_Proben.xlsx')
 ## we just need those with fiona in the "Probe Id" column value, 
@@ -63,9 +71,11 @@ aa = pd.read_excel('/home/daniel/Documents/analyses/FionaCave/metadata/WeigQCche
 bb = aa[["Genomics Id","Probe Id"]]
 mask = bb["Probe Id"].str.contains('Fiona').fillna(False)
 cc = bb[mask]
+## it looks like this missed one sample, where "Fiona" is spelled with a big "I"
+cc = cc.append(bb[bb["Probe Id"].str.contains('FIona-9').fillna(False)])
+cc.reset_index(inplace=True, drop=True)
 
 ## now, we want to go through our fasuqs series, and pull out the matches to our Genomics Id column...
-
 
 def getFN(GI):
     mask = fastqs.str.contains(GI)
@@ -74,7 +84,7 @@ def getFN(GI):
 
 cc['filename'] = cc['Genomics Id'].apply(getFN)
 
-cc.to_csv('fionaFileMap.csv', header=False, index=False)
+cc.to_csv('fionaFileMap.csv', index=False)
 
 ## and for the shell loop, just the filenames:
 
@@ -83,16 +93,148 @@ cc['filename'].to_csv('fionaFileList', header=False, index=False)
 ## now out to shell, to save just these files:
 
 #mkdir fionaFastqs
-ddir=/home/daniel/Documents/analyses/FionaCave/Fastq/
-fionaFastqs=/home/daniel/Documents/analyses/FionaCave/fionaFastqs
+ddir=/home/daniel/Documents/analyses/FionaCave/otherFastqs/
+fionaFastqs=/home/daniel/Documents/analyses/FionaCave/fionaFastqs/
 
 for x in $(cat fionaFileList)
 do
     mv $ddir$x $fionaFastqs
 done
 
-## time to set up a git repo for this.
+## and back into this for for a moment, we want to the illumina indexes
+## make sure they aren't floating around somewhere
 
-## git remote set-url origin git@github.com:danchurch/losCedrosTrees.git
+readDir = "/home/daniel/Documents/analyses/FionaCave/"
+
+os.path.exists(readDir+'fionaFileMap.csv')
+
+aa = pd.read_csv(readDir+'fionaFileMap.csv', index_col='Genomics Id')
+
+## get sample indexes. There are two...why? these are uni-directional, right?
+## keep them for the moment, maybe this will make sense later...
+
+indexCSV = "/home/daniel/Documents/analyses/FionaCave/metadata/tillmannPrimer/weigIndexInfo.csv"
+os.path.exists(indexCSV)
+indexInfo = pd.read_csv(indexCSV, index_col='Sample_Name')
+indexInfo = indexInfo[['index', 'index2']]
+indexInfo.head()
+bb = aa.join(indexInfo, how='left')
+bb.reset_index(inplace=True)
+bb.columns = ['sampleName','description', 'fileName','index','index2']
+## update our fiona file info csv
+bb.to_csv('fionaFileMap.csv',  index=False)
+bb = pd.read_csv('fionaFileMap.csv')
+
+fionaInfo = pd.read_csv('fionaFileMap.csv')
+
+
+## great, now we need metadata....
+
+
+## attach the pool that a sample is from?
+
+## and can we get the forward and reverse 16s and 18s barcodes 
+## for these?
+
+## from Tillmann email:
+
+## Prok_16S (~300 bp)
+## ilu_515f
+## TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGGTGYCAGCMGCCGCGGTAA
+## ilu_806rN
+## GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGGACTACNVGGGTWTCTAAT
+
+## Euk_18S (~500 bp)
+## ilu_GA20F           
+## TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGGTAACTTCGGGAWAAGGATTGGCT
+## ilu_RM9R
+## GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGAGAGTCAARCTCAACAGGGTCTT 
+
+
+
+## great, so now, let's get some quality graphics for our read sets, etc.
+
+## we want to import our read files into qiime...
+
+## not sure what the illumina pipelines are these days...
+## this may be casava1.8?
+
+## an example data set is available from qiime for comparison:
+
+conda activate qiime2-2021.11
+
+exFastq='/home/daniel/Desktop/casava-18-single-end-demultiplexed/L1S8_8_L001_R1_001.fastq'
+
+head $exFastq
+
+## let's check for primers in there...
+
+f16s=TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGGTGYCAGCMGCCGCGGTAA
+r16s=GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGGACTACNVGGGTWTCTAAT
+f16sRC=TTACCGCGGCMGCTGYCACCTGTCTCTTATACACATCTGACGCTGCCGACGA
+r16sRC=ATTAGAWACCCVNGTAGTCCCTGTCTCTTATACACATCTCCGAGCCCACGAGAC
+
+f18s=TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGGTAACTTCGGGAWAAGGATTGGCT
+r18s=GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGAGAGTCAARCTCAACAGGGTCTT
+f18sRC=AGCCAATCCTTWTCCCGAAGTTACCTGTCTCTTATACACATCTGACGCTGCCGACGA
+r18sRC=AAGACCCTGTTGAGRTTGACTCTCTGTCTCTTATACACATCTCCGAGCCCACGAGAC
+
+ffq=/home/daniel/Documents/analyses/FionaCave/fionaFastqUnz/
+
+grep -R GAGTCAGCAGC $ffq 
+grep -R GAGTCAGCAGC $ffq | wc -l
+
+grep -R $f16s $ffq
+grep -R $r16s $ffq
+grep -R $f16sRC $ffq
+grep -R $r16sRC $ffq
+
+grep -R $f18s $ffq
+grep -R $r18s $ffq
+grep -R $f18sRC $ffq
+grep -R $r18sRC $ffq
+
+## no exact matches. I assume since this is all demultiplexed,
+## he pulled out phyx, etc. 
+
+## how are the read depths? and quality
+
+exFQ=/home/daniel/Documents/analyses/FionaCave/fionaFastaqsUnz/Oemik-000687_S101_L001_R1_001.fastq
+
+fastqc fionaFastqs/Oemik-000687_S101_L001_R1_001.fastq.gz  \
+
+fastqc fionaFastqs/*  \
+-o fastQCoutputs \
+-- extract
+
+## it would be nice to get a total view of the fiona runs,
+
+cat * > allFionaSamples.fastq
+
+fastqc allFionaSamples.fastq \
+-o fastQCoutputs \
+--extract
+
+## oh jeez. this is some messy data
+## the vast majority of the reads are 
+## ~150 BP in length (60,000 or so), less than 20000 
+## are in the right read length
+
+## might be useful to break this down by primer
+## sets...
+
+
+## so onward with qiime, to bring this in as an "artifact"
+
+conda activate qiime2-2021.11
+
+qiime tools import \
+  --type 'SampleData[SequencesWithQuality]' \
+  --input-path /home/daniel/Documents/analyses/FionaCave/fionaFastqs \
+  --input-format CasavaOneEightSingleLanePerSampleDirFmt \
+  --output-path fionaRawSeqs.qza
+
+## and we need some kind of metadata here
+## the only metadata I think we have are what pool a sample came from. 
 
 
