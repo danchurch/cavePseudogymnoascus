@@ -1,0 +1,11 @@
+PASS	Basic Statistics	testprokcat.fastq
+PASS	Per base sequence quality	testprokcat.fastq
+WARN	Per tile sequence quality	testprokcat.fastq
+PASS	Per sequence quality scores	testprokcat.fastq
+FAIL	Per base sequence content	testprokcat.fastq
+WARN	Per sequence GC content	testprokcat.fastq
+PASS	Per base N content	testprokcat.fastq
+WARN	Sequence Length Distribution	testprokcat.fastq
+FAIL	Sequence Duplication Levels	testprokcat.fastq
+FAIL	Overrepresented sequences	testprokcat.fastq
+PASS	Adapter Content	testprokcat.fastq

@@ -4,3 +4,5 @@
 .fastq
 *.csv#
 *.sw*
+testprokcat.fastq
+testeukcat.fastq

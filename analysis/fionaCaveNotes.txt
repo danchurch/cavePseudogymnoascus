@@ -199,6 +199,8 @@ grep -R $r18sRC $ffq
 
 ## how are the read depths? and quality
 
+cut -d , -f 2 fionaFileMap.csv
+
 exFQ=/home/daniel/Documents/analyses/FionaCave/fionaFastaqsUnz/Oemik-000687_S101_L001_R1_001.fastq
 
 fastqc fionaFastqs/Oemik-000687_S101_L001_R1_001.fastq.gz  \
@@ -237,4 +239,91 @@ qiime tools import \
 ## and we need some kind of metadata here
 ## the only metadata I think we have are what pool a sample came from. 
 
+## side note, for github, how do make sure we're not putting on 
+## large files, before sending them to github? with find:
+
+find -size +10M -exec du -h {} \;
+
+
+## okay, for the moment, let's confirm that the Eukaryotic reads are 
+## the source of the problem. back in python
+
+## the 16s reads are:
+
+wd = '/home/daniel/Documents/analyses/FionaCave/'
+
+aa = pd.read_csv(wd+'fionaFileMap.csv')
+
+prokDF = aa[~aa['description'].str.contains('Euk')]
+
+prokDF['fileName'].to_csv('prokFileList', header=False, index=False)
+
+
+eukDF = aa[aa['description'].str.contains('Euk')]
+
+eukDF['fileName'].to_csv('eukFileList', header=False, index=False)
+
+## now, we should be able to cat these and check the qualities in bash
+
+## forgot to take off the gz endings
+sed -i 's/\.gz//' prokFileList 
+## add in the directory for the unzipped fastqs
+sed -i 's/^/fionaFastaqsUnz\//' prokFileList
+
+cat $(cat prokFileList) > testprokcat.fastq
+
+## does this work?
+for i in $(cat prokFileList)
+do
+ls -lh $i
+done
+
+## run the fastqc on this
+
+fastqc testprokcat.fastq \
+-o fastQCoutputs \
+--extract
+
+## actually looks okay. lots of trimming, etc. but useable, maybe
+
+## and as far as the euks?
+
+
+## forgot to take off the gz endings
+sed -i 's/\.gz//' eukFileList 
+## add in the directory for the unzipped fastqs
+sed -i 's/^/fionaFastaqsUnz\//' eukFileList
+
+cat $(cat eukFileList) > testeukcat.fastq
+
+## how many reads are we dealing with?:
+
+grep @FS1 testprokcat.fastq | wc -l ## 112,436, over eleven samples
+grep @FS1 testeukcat.fastq | wc -l ## 963,776 reads, over 5 samples. 
+
+## shit, looks like the euks took all the reads, and they are not 
+## useable. 
+
+testprokcat.fastq
+testeukcat.fastq
+
+fastqc testeukcat.fastq \
+-o fastQCoutputs \
+--extract
+
+## yeah the shitiness is all in the eukaryotic dataset
+
+## so now what? Seems like here we branch into to two 
+## sub-projects. 
+
+## one project is an autopsy on the eukaryotic reads. 
+## the other is a diversity analysis of prokaryotic 
+## reads. 
+
+## first priority is the 16s data, to get some nice graphs for fiona. 
+
+## at the end of this sub-project we can blast our 18s
+## for a match with the pseudogymnoascus. 
+
+## for now, 16s. 
 

@@ -1,0 +1,11 @@
+PASS	Basic Statistics	testeukcat.fastq
+WARN	Per base sequence quality	testeukcat.fastq
+WARN	Per tile sequence quality	testeukcat.fastq
+PASS	Per sequence quality scores	testeukcat.fastq
+FAIL	Per base sequence content	testeukcat.fastq
+FAIL	Per sequence GC content	testeukcat.fastq
+PASS	Per base N content	testeukcat.fastq
+WARN	Sequence Length Distribution	testeukcat.fastq
+FAIL	Sequence Duplication Levels	testeukcat.fastq
+FAIL	Overrepresented sequences	testeukcat.fastq
+PASS	Adapter Content	testeukcat.fastq
