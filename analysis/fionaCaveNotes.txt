@@ -327,3 +327,153 @@ fastqc testeukcat.fastq \
 
 ## for now, 16s. 
 
+
+############## 16s ##################
+
+## okay, let's use qiime, see how well that environment 
+## is set up for quality filtering/trimming steps
+
+## first, let's split up the fiona directory into 
+## euks and proks, not really, just with symlinks
+
+## qiime wants to import the zipped files, so..
+
+## edit our file list again to 
+
+sed -i 's/fionaFastaqsUnz/fionaFastqs/' prokFileList
+sed -i 's/\.fastq/\.fastq\.gz/' prokFileList
+
+sed -i 's/fionaFastaqsUnz/fionaFastqs/' eukFileList
+sed -i 's/\.fastq/\.fastq\.gz/' eukFileList
+
+
+mkdir prokFastaQC
+mkdir eukFastaQC
+
+for i in $(cat prokFileList); do
+    #ln -s $i prokFastaQC${i/fionaFastqs/}
+    cp $i prokFastaQC${i/fionaFastqs/}
+done
+
+for i in $(cat eukFileList); do
+    #ln -s $i eukFastaQC${i/fionaFastqs/}
+    cp $i eukFastaQC${i/fionaFastqs/}
+done
+
+## so focus on the proks only
+
+conda activate qiime2-2021.11
+
+qiime tools import \
+  --type 'SampleData[SequencesWithQuality]' \
+  --input-path /home/daniel/Documents/analyses/FionaCave/prokFastLinks/ \
+  --input-format CasavaOneEightSingleLanePerSampleDirFmt \
+  --output-path fionaRaw16sSeqs.qza
+
+## let's use the dada2 pipeline, for the moment. Because tillmann requested this
+## in the future, I'd prefer USEARCH-UNOISE
+
+## ugh. Why use qiime? I'm going to dada2 directly in R, makes more sense. 
+
+## let's see if we can our ASVs out of this this afternoon
+
+## following https://benjjneb.github.io/dada2/tutorial_1_8.html
+
+install.packages('dada2')
+
+BiocManager::install("dada2")
+
+library(dada2)
+
+## our 16s files are here:
+
+path <- "/home/daniel/Documents/analyses/FionaCave/fionaFastaqsUnz/"
+sampFiles <- list.files(path)
+
+
+
+i <- "Oemik-000724_S138_L001_R1_001.fastq"
+png(file=paste(i,"qplot.png",sep='.'))
+plotQualityProfile(paste(path,i,sep=''))
+dev.off()
+
+system('mkdir dada2QualityPlots16s')
+
+pdf(file="dada2QualityPlots.pdf")
+for (i in sampFiles) {
+    print(i)
+    plotQualityProfile(paste(path,i,sep=''))
+}
+dev.off()
+## that did not work, don't know why. some custom deal with dada2?
+
+## so had to do:
+
+png(file=paste(i,"qplot.png",sep='.'))
+plotQualityProfile(paste(path,i,sep=''))
+dev.off()
+
+i <- "Oemik-000687_S101_L001_R1_001.fastq"
+i <- "Oemik-000688_S102_L001_R1_001.fastq"
+i <- "Oemik-000693_S107_L001_R1_001.fastq"
+i <- "Oemik-000694_S108_L001_R1_001.fastq"
+i <- "Oemik-000698_S112_L001_R1_001.fastq"
+i <- "Oemik-000699_S113_L001_R1_001.fastq"
+i <- "Oemik-000703_S117_L001_R1_001.fastq"
+i <- "Oemik-000704_S118_L001_R1_001.fastq"
+i <- "Oemik-000708_S122_L001_R1_001.fastq"
+i <- "Oemik-000709_S123_L001_R1_001.fastq"
+i <- "Oemik-000713_S127_L001_R1_001.fastq"
+i <- "Oemik-000714_S128_L001_R1_001.fastq"
+i <- "Oemik-000718_S132_L001_R1_001.fastq"
+i <- "Oemik-000719_S133_L001_R1_001.fastq"
+i <- "Oemik-000723_S137_L001_R1_001.fastq"
+i <- "Oemik-000724_S138_L001_R1_001.fastq"
+
+## ugly. Anyway, most of these bacterial 
+## samples start dropping in read quality
+## somewhere are 200 bp? this is very 
+## low quality data. 
+
+## and we don't have paired reads to 
+## make up for this... ugh
+
+## let's try keeping the first 200. 
+
+path <- "/home/daniel/Documents/analyses/FionaCave/fionaFastaqsUnz/"
+
+path <- "/home/daniel/Documents/analyses/FionaCave/fionaFastaqsUnz/"
+
+path <- "/home/daniel/Documents/analyses/FionaCave/prokFastaQC/"
+
+sampFiles <- list.files(path)
+
+help(filterAndTrim)
+
+out <- filterAndTrim(fnFs, filtFs, fnRs, filtRs, truncLen=c(240,160),
+              maxN=0, maxEE=c(2,2), truncQ=2, rm.phix=TRUE,
+              compress=TRUE, multithread=TRUE) # On Windows set multithread=FALSE
+
+head(out)
+
+
+
+out <- filterAndTrim(  fwd=path,
+                        filt='proksFiltTrim',
+                        truncLen=200,
+                        multithread=TRUE
+)
+
+out 
+
+errF <- learnErrors('proksFiltTrim', multithread=TRUE)
+
+pdf(file='errorModelDada2.pdf')
+plotErrors(errF, nominalQ=TRUE)
+dev.off()
+
+## that is sufficiently fucked up looking.
+
+## I do not know why we are bothering with this data...
+
+## tomorrow, derep, dechimera, tax it up, etc.
