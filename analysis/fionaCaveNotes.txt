@@ -384,13 +384,13 @@ install.packages('dada2')
 BiocManager::install("dada2")
 
 library(dada2)
+library(phyloseq)
 
 ## our 16s files are here:
 
 path <- "/home/daniel/Documents/analyses/FionaCave/fionaFastaqsUnz/"
+
 sampFiles <- list.files(path)
-
-
 
 i <- "Oemik-000724_S138_L001_R1_001.fastq"
 png(file=paste(i,"qplot.png",sep='.'))
@@ -440,21 +440,14 @@ i <- "Oemik-000724_S138_L001_R1_001.fastq"
 
 ## let's try keeping the first 200. 
 
-path <- "/home/daniel/Documents/analyses/FionaCave/fionaFastaqsUnz/"
 
-path <- "/home/daniel/Documents/analyses/FionaCave/fionaFastaqsUnz/"
+#path <- "/home/daniel/Documents/analyses/FionaCave/fionaFastaqsUnz/"
 
 path <- "/home/daniel/Documents/analyses/FionaCave/prokFastaQC/"
 
 sampFiles <- list.files(path)
 
 help(filterAndTrim)
-
-out <- filterAndTrim(fnFs, filtFs, fnRs, filtRs, truncLen=c(240,160),
-              maxN=0, maxEE=c(2,2), truncQ=2, rm.phix=TRUE,
-              compress=TRUE, multithread=TRUE) # On Windows set multithread=FALSE
-
-head(out)
 
 
 
@@ -466,10 +459,29 @@ out <- filterAndTrim(  fwd=path,
 
 out 
 
+## just checking, how do the libraries look now?:
+
+path <- "/home/daniel/Documents/analyses/FionaCave/proksFiltTrim/"
+
+list.files(path)
+
+## spot checks
+i <- "Oemik-000687_S101_L001_R1_001.fastq.gz"
+i <- "Oemik-000693_S107_L001_R1_001.fastq.gz"
+i <- "Oemik-000713_S127_L001_R1_001.fastq.gz"
+
+plotQualityProfile(paste(path,i,sep=''))
+
+## yeah, looks okay
+
+###### machine learns error #########
+
 errF <- learnErrors('proksFiltTrim', multithread=TRUE)
 
 pdf(file='errorModelDada2.pdf')
+
 plotErrors(errF, nominalQ=TRUE)
+
 dev.off()
 
 ## that is sufficiently fucked up looking.
@@ -477,3 +489,189 @@ dev.off()
 ## I do not know why we are bothering with this data...
 
 ## tomorrow, derep, dechimera, tax it up, etc.
+
+prokErrorModelDada2 <- errF
+save(prokErrorModelDada2, file='prokErrorModelDada2.rda')
+errF <- prokErrorModelDada2
+
+## derep
+
+derepProlks <- derepFastq('proksFiltTrim', verbose=TRUE)
+
+#sink(file="derepFirstOutputs.txt")
+derepProlks 
+#sink()
+
+samplefile.names <- list.files('proksFiltTrim')
+
+
+getSampName <- function(i) { return(strsplit(i, "_")[[1]][1]) }
+
+sampleNames = sapply(samplefile.names, getSampName)
+
+names(derepProlks) <- sampleNames
+
+dadaProks <- dada(derepProlks, err=errF, multithread=TRUE)
+
+dadaProks
+
+## if we pool the reads, does this change much?
+
+
+dadaProksPooled <- dada(derepProlks, err=errF, multithread=TRUE, pool=TRUE)
+
+## 
+
+#sink('dadaProks.txt')
+dadaProks
+#sink()
+
+#sink('dadaProksPooled.txt')
+dadaProksPooled
+#sink()
+
+## oh jeez, pooling the reads created ~10x as many ASVs...why?
+## with this low quality data, I'm going with the more conservative
+## method (unpooled). 
+
+## we may have to use an OTU approach anyway, to soften the 
+## rough edges of this shitty data
+
+####### make sequence table ########
+
+str(dadaProks)
+
+seqtab <- makeSequenceTable(dadaProks)
+
+seqtab[1:3,1:2]
+
+dim(seqtab)
+
+## just checking:
+table(nchar(getSequences(seqtab))) 
+## yeah, all exactly 200, as expected
+
+seqtab.nochim <- removeBimeraDenovo(seqtab, method="consensus", multithread=TRUE, verbose=TRUE)
+## 83 chimeras removed
+
+dim(seqtab.nochim) ## 1236 asvs
+
+dim(seqtab) ## 1319 asvs
+
+sum(seqtab.nochim)/sum(seqtab)
+
+## 92% asvs retained. 
+
+sum(seqtab.nochim) ## 85201 reads retained. Out of?
+
+## in shell
+
+
+sed -i "s/fionaFastqs/fionaFastaqsUnz/" prokFileList
+
+for i in $(cat prokFileList); do
+    #ls -l ${i/\.gz}
+    grep "@FS" ${i/\.gz} | wc -l
+done
+
+## which gives us the following read abundances
+7586
+31220
+7186
+7788
+6382
+8573
+7200
+8540
+9559
+11676
+6726
+
+aa = c(7586, 31220, 7186, 7788, 6382, 8573, 7200, 8540, 9559, 11676, 6726)
+
+sum(aa) ## 112,436  reads 
+
+## so we lost 
+
+112436-85201
+
+## 27,235 reads were lost in this process. Not horrible.
+
+###### assign taxonomy #######
+
+## dada2 includes its own classifier, a naive bayesian classifier like rdp, 
+## and has a training data set, all based on silva
+
+## I guess because we are using a slightly older version of dada2, and thus
+## following an older tutorial, the silva files available don't quite 
+## match the tutorial. let's see if the newest version of silva training 
+## set is compatible: 
+
+system("wget https://zenodo.org/record/4587955/files/silva_nr99_v138.1_train_set.fa.gz")
+
+## just use the default bootstrap settings, they probably know better than I do
+
+taxa <- assignTaxonomy(seqtab.nochim, "silva_nr99_v138.1_train_set.fa.gz", multithread=TRUE)
+
+taxTable <- taxa
+save(taxTable, file="taxTable.rda")
+
+## adding species requires a separate step:
+
+system("wget https://zenodo.org/record/4587955/files/silva_species_assignment_v138.1.fa.gz")
+
+taxa <- addSpecies(taxa, "silva_species_assignment_v138.1.fa.gz")
+
+## write to csv
+taxaNoRow <- taxa
+rownames(taxaNoRow) <- NULL
+write.csv(taxaNoRow, file='taxaNoRow.csv')
+
+## interesting. Now it's go time with phyloseq, methinks
+
+## need to format our metadata so that it has the right sample names
+## so over to python 
+
+import pandas as pd
+
+aa = pd.read_csv("fionaMetadata.csv")
+
+bb = pd.read_csv('fionaFileMap.csv')
+
+## all substrates are sediment, don't need this. 
+aa.drop('Substrate', axis=1, inplace=True)
+## we want to assign correct sample names to this
+aa.rename({'Sample Name':'description'}, axis=1, inplace=True)
+
+bb.set_index('description', inplace=True)
+
+cc = aa.join(bb, how='left', on='description')
+
+dd = cc[['description', 'Pool', 'sampleName']]
+
+dd.set_index("sampleName", inplace=True)
+
+dd.to_csv('fionaMetadata.csv')
+
+############## onto phyloseq ###############
+
+## our metadata is here:
+
+aa <- read.csv('metadata/fionaMetadata.csv', row.names=1)
+
+## subset to prokaryotic samples:
+
+prokMetadata <- aa[row.names(seqtab.nochim),]
+
+prokMetadata 
+
+ps <- phyloseq(otu_table(seqtab.nochim, taxa_are_rows=FALSE), 
+               sample_data(prokMetadata), 
+               tax_table(taxTable))
+
+plot_richness(ps, x="Pool", measures=c("Shannon", "Simpson"), color="When")
+
+ps.prop <- transform_sample_counts(ps, function(otu) otu/sum(otu))
+ord.nmds.bray <- ordinate(ps.prop, method="NMDS", distance="bray")
+
+plot_ordination(ps.prop, ord.nmds.bray, color="Pool", title="Bray NMDS")

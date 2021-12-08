@@ -1,0 +1,55 @@
+$`Oemik-000687`
+dada-class: object describing DADA2 denoising results
+140 sequence variants were inferred from 6141 input unique sequences.
+Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16
+
+$`Oemik-000693`
+dada-class: object describing DADA2 denoising results
+506 sequence variants were inferred from 22934 input unique sequences.
+Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16
+
+$`Oemik-000698`
+dada-class: object describing DADA2 denoising results
+140 sequence variants were inferred from 5551 input unique sequences.
+Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16
+
+$`Oemik-000699`
+dada-class: object describing DADA2 denoising results
+63 sequence variants were inferred from 3653 input unique sequences.
+Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16
+
+$`Oemik-000703`
+dada-class: object describing DADA2 denoising results
+149 sequence variants were inferred from 5991 input unique sequences.
+Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16
+
+$`Oemik-000704`
+dada-class: object describing DADA2 denoising results
+80 sequence variants were inferred from 4135 input unique sequences.
+Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16
+
+$`Oemik-000708`
+dada-class: object describing DADA2 denoising results
+178 sequence variants were inferred from 7144 input unique sequences.
+Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16
+
+$`Oemik-000709`
+dada-class: object describing DADA2 denoising results
+73 sequence variants were inferred from 4674 input unique sequences.
+Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16
+
+$`Oemik-000713`
+dada-class: object describing DADA2 denoising results
+155 sequence variants were inferred from 6861 input unique sequences.
+Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16
+
+$`Oemik-000718`
+dada-class: object describing DADA2 denoising results
+164 sequence variants were inferred from 7781 input unique sequences.
+Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16
+
+$`Oemik-000723`
+dada-class: object describing DADA2 denoising results
+230 sequence variants were inferred from 8811 input unique sequences.
+Key parameters: OMEGA_A = 1e-40, OMEGA_C = 1e-40, BAND_SIZE = 16
+
