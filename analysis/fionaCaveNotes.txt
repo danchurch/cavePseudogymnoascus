@@ -50,7 +50,10 @@ Fiona-20Euk
 Fiona-21Euk
 Fiona-22Euk
 
-## let's get these and remove the others.
+## I see absolutely no evidence anywhere of lab controls, positive 
+## or negative. Great, off to a good start. 
+
+## let's get these Fiona samples and remove the others.
 ## and go fishing for primers...
 
 ## do this in pandas
@@ -439,7 +442,8 @@ i <- "Oemik-000724_S138_L001_R1_001.fastq"
 ## make up for this... ugh
 
 ## let's try keeping the first 200. 
-
+## note: rerunning this after figuring out 
+## the primers, so including a left (5') trim of 19 bp
 
 #path <- "/home/daniel/Documents/analyses/FionaCave/fionaFastaqsUnz/"
 
@@ -450,16 +454,24 @@ sampFiles <- list.files(path)
 help(filterAndTrim)
 
 
-
 out <- filterAndTrim(  fwd=path,
                         filt='proksFiltTrim',
+                        trimLeft=19,
                         truncLen=200,
                         multithread=TRUE
 )
 
-out 
+out  ## not a lot lost
 
-## just checking, how do the libraries look now?:
+## do they look better? run a report
+
+allProksFiltTrimfastq=/home/daniel/Documents/analyses/FionaCave/proksFiltTrimUnz/proksFiltTrim.fastq
+
+fastqc $allProksFiltTrimfastq \
+-o fastQCoutputs \
+--extract
+
+## generally good. But damn short now.
 
 path <- "/home/daniel/Documents/analyses/FionaCave/proksFiltTrim/"
 
@@ -467,12 +479,14 @@ list.files(path)
 
 ## spot checks
 i <- "Oemik-000687_S101_L001_R1_001.fastq.gz"
+
 i <- "Oemik-000693_S107_L001_R1_001.fastq.gz"
+
 i <- "Oemik-000713_S127_L001_R1_001.fastq.gz"
 
 plotQualityProfile(paste(path,i,sep=''))
 
-## yeah, looks okay
+## yeah, looks okay I guess
 
 ###### machine learns error #########
 
@@ -491,7 +505,8 @@ dev.off()
 ## tomorrow, derep, dechimera, tax it up, etc.
 
 prokErrorModelDada2 <- errF
-save(prokErrorModelDada2, file='prokErrorModelDada2.rda')
+#save(prokErrorModelDada2, file='prokErrorModelDada2.rda')
+#load('prokErrorModelDada2.rda')
 errF <- prokErrorModelDada2
 
 ## derep
@@ -506,11 +521,8 @@ samplefile.names <- list.files('proksFiltTrim')
 
 
 getSampName <- function(i) { return(strsplit(i, "_")[[1]][1]) }
-
 sampleNames = sapply(samplefile.names, getSampName)
-
 names(derepProlks) <- sampleNames
-
 dadaProks <- dada(derepProlks, err=errF, multithread=TRUE)
 
 dadaProks
@@ -543,26 +555,26 @@ str(dadaProks)
 
 seqtab <- makeSequenceTable(dadaProks)
 
+
 seqtab[1:3,1:2]
 
 dim(seqtab)
 
 ## just checking:
 table(nchar(getSequences(seqtab))) 
-## yeah, all exactly 200, as expected
+## yeah, all exactly 181, as expected
 
 seqtab.nochim <- removeBimeraDenovo(seqtab, method="consensus", multithread=TRUE, verbose=TRUE)
-## 83 chimeras removed
+## just 2 chimeras removed
 
-dim(seqtab.nochim) ## 1236 asvs
+dim(seqtab.nochim) ## 1717 asvs
 
-dim(seqtab) ## 1319 asvs
+save(seqtab.nochim, file='fionaCaveASVseqTable.csv')
 
-sum(seqtab.nochim)/sum(seqtab)
+sum(seqtab.nochim)/sum(seqtab) ## 99% retained
 
-## 92% asvs retained. 
 
-sum(seqtab.nochim) ## 85201 reads retained. Out of?
+sum(seqtab.nochim) ## 101636 reads retained. Out of?
 
 ## in shell
 
@@ -593,9 +605,11 @@ sum(aa) ## 112,436  reads
 
 ## so we lost 
 
-112436-85201
+112436-101636
 
-## 27,235 reads were lost in this process. Not horrible.
+## 10800 reads were lost in this process. Not horrible.
+
+
 
 ###### assign taxonomy #######
 
@@ -614,7 +628,6 @@ system("wget https://zenodo.org/record/4587955/files/silva_nr99_v138.1_train_set
 taxa <- assignTaxonomy(seqtab.nochim, "silva_nr99_v138.1_train_set.fa.gz", multithread=TRUE)
 
 taxTable <- taxa
-save(taxTable, file="taxTable.rda")
 
 ## adding species requires a separate step:
 
@@ -622,10 +635,15 @@ system("wget https://zenodo.org/record/4587955/files/silva_species_assignment_v1
 
 taxa <- addSpecies(taxa, "silva_species_assignment_v138.1.fa.gz")
 
-## write to csv
+taxTable <- taxa
+
+save(taxTable, file="taxTable.rda")
+
+## write just the taxonomic abundances to csv
+
 taxaNoRow <- taxa
 rownames(taxaNoRow) <- NULL
-write.csv(taxaNoRow, file='taxaNoRow.csv')
+write.csv(taxaNoRow, file='taxaNoSequence.csv')
 
 ## interesting. Now it's go time with phyloseq, methinks
 
@@ -660,18 +678,276 @@ dd.to_csv('fionaMetadata.csv')
 aa <- read.csv('metadata/fionaMetadata.csv', row.names=1)
 
 ## subset to prokaryotic samples:
-
 prokMetadata <- aa[row.names(seqtab.nochim),]
 
 prokMetadata 
+
 
 ps <- phyloseq(otu_table(seqtab.nochim, taxa_are_rows=FALSE), 
                sample_data(prokMetadata), 
                tax_table(taxTable))
 
 plot_richness(ps, x="Pool", measures=c("Shannon", "Simpson"), color="When")
+## apparently we have no singletons? weird. wonder why?
+
 
 ps.prop <- transform_sample_counts(ps, function(otu) otu/sum(otu))
+
 ord.nmds.bray <- ordinate(ps.prop, method="NMDS", distance="bray")
 
-plot_ordination(ps.prop, ord.nmds.bray, color="Pool", title="Bray NMDS")
+ord.nmds.bray <- ordinate(ps.prop, method="NMDS", distance="bray") 
+
+p = plot_ordination(ps.prop, ord.nmds.bray, color="Pool", title="Bray NMDS") 
+p$layers <- p$layers[-1]
+j=0.05
+q = p + geom_jitter(width = j, height=j, size=5, alpha=0.7)
+q
+
+s = q + geom_point(size=5, alpha=0.7)
+s
+## let's revisit that, after we do some breakdowns of the taxonamy
+
+geom_point(size = 1, alpha = 0.3,
+               position = position_jitter(width = 0.3)) +
+
+## first start - 
+
+
+
+## great. But let's back up and make classic 97% OTUs, as recently requested
+## by tillmann
+
+## move all these data objects to somewhere so we don't have to repeat.
+
+fionaASVphyseq <- ps
+seqtab.nochim <- asvSeqTabNoChim
+
+save(fionaASVphyseq, file='fionaASVphyseq.rda')
+
+save(asvSeqTabNoChim, file='asvSeqTabNoChim.rda')
+
+## can we use this in qiime?
+
+## back to qiime
+
+conda activate qiime2-2021.11
+
+qiime tools import \
+  --type 'SampleData[SequencesWithQuality]' \
+  --input-path /home/daniel/Documents/analyses/FionaCave/prokFastaQC \
+  --input-format CasavaOneEightSingleLanePerSampleDirFmt \
+  --output-path fionaProk16sSeqs_raw.qza
+
+## nope
+
+## start again
+## get our metadata how qiime wants it...
+
+## we know we need to trim down to 200 bp, how does qiime want us to do this?
+
+qiime dada2 denoise-single \
+    --p-trunc-len 200 \
+    --i-demultiplexed-seqs fionaProk16sSeqs_raw.qza \
+    --p-trunc-q 32 \
+    --output-dir "qiimeDadaOutputs"
+
+## great, that was a fail. For some reason, as implemented here,
+## dada2 fails to generate error rates, says too few reads. 
+## but it's got lots. Qiime sucks. I always have to do this, 
+## dive into the original packages, because they just pile 
+## script upon script.
+
+## anyway, if we do come back to the clustering of asvs issue, this looks
+## like a good start:
+
+https://groups.google.com/g/vsearch-forum/c/orqWhwGlPPY?pli=1 
+
+
+## for now its back to the search for primers in the reads. Alfons 
+## says they should be in there, my greps don't find them. 
+## this means they have some off-target amplification, etc. 
+
+## let's look harder with grep:
+
+proks=/home/daniel/Documents/analyses/FionaCave/prokFastaQC
+
+f16s=TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGGTGYCAGCMGCCGCGGTAA
+r16s=GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGGACTACNVGGGTWTCTAAT
+f16sRC=TTACCGCGGCMGCTGYCACCTGTCTCTTATACACATCTGACGCTGCCGACGA
+r16sRC=ATTAGAWACCCVNGTAGTCCCTGTCTCTTATACACATCTCCGAGCCCACGAGAC
+
+f18s=TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGGTAACTTCGGGAWAAGGATTGGCT
+r18s=GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGAGAGTCAARCTCAACAGGGTCTT
+f18sRC=AGCCAATCCTTWTCCCGAAGTTACCTGTCTCTTATACACATCTGACGCTGCCGACGA
+r18sRC=AAGACCCTGTTGAGRTTGACTCTCTGTCTCTTATACACATCTCCGAGCCCACGAGAC
+
+ffq=/home/daniel/Documents/analyses/FionaCave/proksUnzipped/
+
+grep -R GAGTCAGCAGC $ffq 
+
+grep -R GAGTCAGCAGC $ffq | wc -l
+
+grep -R $f16s $ffq
+grep -R $r16s $ffq
+grep -R $f16sRC $ffq
+grep -R $r16sRC $ffq
+
+grep -R $f18s $ffq
+grep -R $r18s $ffq
+grep -R $f18sRC $ffq
+grep -R $r18sRC $ffq
+
+## no complete matches. But our forward matches should be in there
+## try some fragments
+
+## f16sFrag=TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGGTGYCAGCMGCCGCGGTAA
+
+frag=TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGGTG.CAGC.GCCGCGGTAA ## nope
+
+frag=GTGTATAAGAGACAGGTG ## nope
+
+frag=GTGTATA ## nope
+
+frag=GTGTCAGCCGCCGC
+
+grep -R $frag $ffq
+
+## positions 2, 6, and 5 are listed as highly conserved
+
+## so something like this?:
+
+frag=^.T..CA
+
+grep -R $frag $ffq | wc -l 
+## 95705 out of 112436 reads have this
+
+## it's not in our primers:
+grep -R $frag <(echo $f16s)
+
+echo ${#f16s} ## primers are 52 bp long. Wtf. 
+
+## hmmm, looks like I may have been searching for too much. try this:
+
+f16s=GTG.CAGC.GCCGCGGTAA
+grep -R $f16s $ffq 
+
+grep -R $f16s $ffq | wc -l ## 57731 out of 112436 have this
+
+## jeezus, so our primer sequence is incorrect in over half the 
+## the reads. 
+## something is really wrong. Oh well. No one is going to publish 
+## this thing.
+
+## that's our forward primer. 
+echo ${#f16s} ## 19 bp. 
+
+## okay, so given that, let's trim off the first 19 bp. 
+## prior to that, remove any reads under 292 bp?
+## and also our previous 3' cutoff at original bp200 still
+## holds. That will leave us with ~180 bp. Not much. 
+
+## so rerun the native dada2 pipeline with these cutoffs,
+## then make pretty graphs for fiona. 
+
+## so jump back to the above sections on dada2...
+
+## and from there, try using adapting vsearch for OTU clustering of our 
+## sequences
+
+## what just did was a machine-learning-modified method of dereplication,
+## essentially. So we want make an object that vsearch understands as a 
+## table of dereplicates with their abundances
+
+## we also need to track which samples of members of these and how many.
+## jeezus. 
+
+## this is way too much work for an unpublishable data set. 
+
+## new plan - use the taxonomy table from the asvs, collapse it by genus. 
+
+## then treat genus as our otus. This will work for a thesis, I think.
+
+## so back into dada2/phyloseq
+
+library(dada2)
+library(phyloseq)
+library(ggplot2)
+
+## we need our seq x sample and seq x tax tables:
+
+load('taxTable.rda')
+
+
+## where is our sample table?  
+
+## ugh, need to rebuild...back in a minute...
+
+## okay, now can we break down the abundances?
+## I think we want a rank abundance curve by genus and phylum
+## both by individual pool, and overall
+
+## start with the overall, can phyloseq help us?
+
+ps <- phyloseq(otu_table(seqtab.nochim, taxa_are_rows=FALSE), 
+               sample_data(prokMetadata), 
+               tax_table(taxTable))
+
+top20 <- names(sort(taxa_sums(ps), decreasing=TRUE))[1:20]
+
+## this is a quick and dirty normalization by total sample abundances
+
+ps.top20 <- transform_sample_counts(ps, function(OTU) OTU/sum(OTU))
+ps.top20 <- prune_taxa(top20, ps.top20)
+plot_bar(ps.top20, x="Pool", fill="Phylum")
+
+top30 <- names(sort(taxa_sums(ps), decreasing=TRUE))[1:30]
+ps.top30 <- transform_sample_counts(ps, function(OTU) OTU/sum(OTU))
+ps.top30 <- prune_taxa(top30, ps.top30)
+plot_bar(ps.top30, x="Pool", fill="Phylum")
+
+## nice, but too many lines. Can we merge OTUs counts?
+
+
+#aa <- ps
+
+aa <- merge_samples(ps, "Pool")
+top30 <- names(sort(taxa_sums(aa), decreasing=TRUE))[1:30]
+aa.top30 <- transform_sample_counts(aa, function(OTU) OTU/sum(OTU))
+aa.top30 <- prune_taxa(top30, aa.top30)
+sample_data(aa.top30)
+plot_bar(aa.top30, fill="Phylum")
+
+
+
+rownames(bb) <- NULL
+
+bb <- tax_table(aa)[top30,]
+
+
+aa
+
+## I think technically we should be doing something deseq to stabilize these,
+## but oh well.
+
+
+## how do we merge to genus level?
+
+bb = tax_glom(ps, "Genus")
+
+bb ## this takes us to 129 taxa (genera), from 1717 ASVs
+
+cc = tax_table(bb); row.names(cc) <- NULL
+write.csv(cc, file='generaMerge.csv')
+
+bb = tip_glom(ps, "Genus")
+
+aa <- merge_samples(bb, "Pool")
+
+top30 <- names(sort(taxa_sums(aa), decreasing=TRUE))[1:30]
+aa.top30 <- transform_sample_counts(aa, function(OTU) OTU/sum(OTU))
+aa.top30 <- prune_taxa(top30, aa.top30)
+sample_data(aa.top30)
+plot_bar(aa.top30, fill="Phylum")
+
+
+

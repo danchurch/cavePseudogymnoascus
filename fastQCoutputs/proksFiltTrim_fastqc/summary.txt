@@ -1,0 +1,11 @@
+PASS	Basic Statistics	proksFiltTrim.fastq
+PASS	Per base sequence quality	proksFiltTrim.fastq
+WARN	Per tile sequence quality	proksFiltTrim.fastq
+PASS	Per sequence quality scores	proksFiltTrim.fastq
+FAIL	Per base sequence content	proksFiltTrim.fastq
+FAIL	Per sequence GC content	proksFiltTrim.fastq
+PASS	Per base N content	proksFiltTrim.fastq
+PASS	Sequence Length Distribution	proksFiltTrim.fastq
+FAIL	Sequence Duplication Levels	proksFiltTrim.fastq
+FAIL	Overrepresented sequences	proksFiltTrim.fastq
+PASS	Adapter Content	proksFiltTrim.fastq

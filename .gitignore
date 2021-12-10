@@ -8,3 +8,5 @@ testprokcat.fastq
 testeukcat.fastq
 silva_nr99_v138.1_train_set.fa.gz
 silva_species_assignment_v138.1.fa.gz
+proksUnzipped/
+proksFiltTrimUnz/
