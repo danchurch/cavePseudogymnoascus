@@ -872,6 +872,7 @@ echo ${#f16s} ## 19 bp.
 library(dada2)
 library(phyloseq)
 library(ggplot2)
+library(Biostrings)
 
 ## we need our seq x sample and seq x tax tables:
 
@@ -891,6 +892,33 @@ load('taxTable.rda')
 ps <- phyloseq(otu_table(seqtab.nochim, taxa_are_rows=FALSE), 
                sample_data(prokMetadata), 
                tax_table(taxTable))
+
+## let's get the sequence names into refseq format
+## and create nicer ASV names
+## (this is thanks to)
+## https://github.com/joey711/phyloseq/issues/1111
+## https://github.com/benjjneb/dada2/issues/613
+
+sequences <- Biostrings::DNAStringSet(taxa_names(ps))
+names(sequences) <- taxa_names(ps)
+ps <- merge_phyloseq(ps, sequences)
+taxa_names(ps) <- paste0("ASV", seq(ntaxa(ps)))
+#save(ps, file='asvPhyloseq.rda')
+
+## that's a relief. 
+
+## write these out to fasta?
+
+refseq(ps)
+
+Biostrings::writeXStringSet(refseq(ps), 'asv.fasta')
+
+## looks great. and especially with the row names
+## cleaned up
+
+## now, can we build a tree? out to bash for muscle and phyml...
+
+
 
 top20 <- names(sort(taxa_sums(ps), decreasing=TRUE))[1:20]
 
@@ -932,14 +960,28 @@ aa
 
 ## how do we merge to genus level?
 
-bb = tax_glom(ps, "Genus")
+bb = tax_glom(ps, "Genus", NArm=TRUE)
+bbNA = tax_glom(ps, "Genus", NArm=FALSE)
+
+bb
+
+bbNA
 
 bb ## this takes us to 129 taxa (genera), from 1717 ASVs
 
 cc = tax_table(bb); row.names(cc) <- NULL
 write.csv(cc, file='generaMerge.csv')
+ccNA = tax_table(bbNA); row.names(ccNA) <- NULL
+write.csv(ccNA, file='generaMergeNA.csv')
 
-bb = tip_glom(ps, "Genus")
+## when we keep all sequences, even those not identified to 
+## to genus, we have 374 otus. When we throw out the unidentified 
+## genera, we have 129 otus. So our tip_glom, based on sequence
+## similarity, should probably land somewhere in between those 
+## two:
+
+## the default
+bb = tip_glom(ps, h=0.2)
 
 aa <- merge_samples(bb, "Pool")
 
@@ -949,5 +991,36 @@ aa.top30 <- prune_taxa(top30, aa.top30)
 sample_data(aa.top30)
 plot_bar(aa.top30, fill="Phylum")
 
+## I think we need a 16s tree...
+## we need a fasta file. So out to muscle and phyml for this?
+
+## muscle 
+
+muscle -in asv.fasta -out fionaASVs.phy -phyi
+
+## great. Now feed this to phyml? 
+
+## just because of this paper, just using defaults
+
+phyml -i fionaASVs.phy -b 100
+
+## then what?
+
+## we use this to construct a unifrac based ordination
+## of the communities, which will be more robust than 
+## the quick and dirty NMS above
+
+## what do we need to show for fiona?
+
+
+## 1. csv of genera and their abundaces for pool, ranked
+## 2. bargraph 30 most common genera and their relative abundances in each pool colored by genus
+
+## 3. csv of genus level OTUs and their abundances for pool, ranked
+## 4. bargraph 30 most common OTUs and their relative abundances in each pool colored by genus
+
+## 5. same bargraph, colored by phylum? 
+
+## 6. bc and unifrac NMS ordinations and permanovas 
 
 

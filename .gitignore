@@ -10,3 +10,7 @@ silva_nr99_v138.1_train_set.fa.gz
 silva_species_assignment_v138.1.fa.gz
 proksUnzipped/
 proksFiltTrimUnz/
+fionaASVs.phy_phyml_boot_stats.txt 
+fionaASVs.phy_phyml_boot_trees.txt 
+fionaASVs.phy_phyml_stats.txt 
+fionaASVs.phy_phyml_tree.txt
