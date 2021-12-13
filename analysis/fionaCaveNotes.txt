@@ -1023,4 +1023,35 @@ phyml -i fionaASVs.phy -b 100
 
 ## 6. bc and unifrac NMS ordinations and permanovas 
 
+## 1. csv of genera and their abundaces for pool, ranked
+
+load('asvPhyloseq.rda')
+
+## collapse genus
+#bb = tax_glom(ps, "Genus", NArm=TRUE)
+bb = tax_glom(ps, "Genus", NArm=FALSE)
+## for one pool
+aa <- merge_samples(bb, "Pool")
+
+## break out one pool:
+
+GP.chl = prune_samples(sampleSums(GP.chl)>=20, GP.chl)
+
+ps
+
+otu_table(aa)[1,]
+
+cc <- prune_samples(sample_data(ps)$Pool == "K1", ps)
+
+
+## 2. bargraph 30 most common genera and their relative abundances in each pool colored by genus
+
+#png(file="top20GeneraByPhyla.csv")
+aa <- merge_samples(bb, "Pool")
+top20 <- names(sort(taxa_sums(aa), decreasing=TRUE))[1:20]
+aa.top20 <- transform_sample_counts(aa, function(OTU) OTU/sum(OTU))
+aa.top20 <- prune_taxa(top20, aa.top20)
+plot_bar(aa.top20, fill="Phylum")
+#dev.off()
+
 
