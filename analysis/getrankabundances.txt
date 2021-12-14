@@ -1,0 +1,29 @@
+library(phyloseq)
+
+## read in phyloseq object
+biom97 <- import_biom('~/Documents/analyses/grahamGrass/grass-endophyte-community/grass_97_wmeta.biom')
+biom97_noCon <- subset_samples(biom97, site != 'Control')
+## may want to transform, etc.
+
+## once we have our phyloseq object: ##
+
+nGen <- 20
+categ <- "French_flat"
+## subset to a category
+aa <- subset_samples(biom97_noCon, site == categ)
+## get rid of zeroes
+zeroes <- !rowSums(otu_table(aa)) == 0
+bb <- prune_taxa(zeroes, aa) 
+## sort and clean
+cc <- colSums(t(otu_table(bb)))
+dd <- sort(cc, decreasing=TRUE)
+## prune down common OTUs
+ee <- dd[1:nGen]
+## relabel with genus:
+ff <- ee
+names(ff) <- tax_table(aa)[names(ee),"Rank6"]
+## plot
+## bottom, left, top, right
+par(mai =  c(2, 1, 0.5, 0.5))
+barplot(ff, las=2)
+

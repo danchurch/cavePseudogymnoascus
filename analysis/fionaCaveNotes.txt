@@ -942,10 +942,10 @@ aa <- merge_samples(ps, "Pool")
 top30 <- names(sort(taxa_sums(aa), decreasing=TRUE))[1:30]
 aa.top30 <- transform_sample_counts(aa, function(OTU) OTU/sum(OTU))
 aa.top30 <- prune_taxa(top30, aa.top30)
-sample_data(aa.top30)
+
+#png('top30GeneraByPhylum_stacked.png', width=1200, height=1000)
 plot_bar(aa.top30, fill="Phylum")
-
-
+#dev.off()
 
 rownames(bb) <- NULL
 
@@ -1047,11 +1047,148 @@ cc <- prune_samples(sample_data(ps)$Pool == "K1", ps)
 ## 2. bargraph 30 most common genera and their relative abundances in each pool colored by genus
 
 #png(file="top20GeneraByPhyla.csv")
+#aa <- merge_samples(bb, "Pool")
+
+bb = tax_glom(ps, "Genus", NArm=FALSE)
 aa <- merge_samples(bb, "Pool")
 top20 <- names(sort(taxa_sums(aa), decreasing=TRUE))[1:20]
 aa.top20 <- transform_sample_counts(aa, function(OTU) OTU/sum(OTU))
 aa.top20 <- prune_taxa(top20, aa.top20)
+
+#png(file="top20GeneraByPhyla.csv")
+
 plot_bar(aa.top20, fill="Phylum")
+
+plot_bar(aa.top20, fill="Phylum")
+
+#plot_bar(aa.top20, fill="Genus")
 #dev.off()
 
+## let's try to get rank abundances for each pool of the common 
+## genera
 
+nGen <- 20
+
+lev <- "Kingdom"
+lev <- "Phylum"
+lev <- "Class"
+lev <- "Order"
+lev <- "Family"
+
+lev <- "Genus"
+lev <- "Species"
+categ <- "K1"
+categ <- "M2"
+categ <- "M3"
+categ <- "M4"
+
+## subset to a category
+aa <- subset_samples(ps, Pool == categ)
+## get rid of zeroes
+#otu_table(aa) == 0
+zeroes <- !colSums(otu_table(aa)) == 0
+bb <- prune_taxa(zeroes, aa)
+## sort and clean
+cc <- colSums((otu_table(bb)))
+dd <- sort(cc, decreasing=TRUE)
+## prune down common OTUs
+ee <- dd[1:nGen]
+## relabel with genus:
+ff <- ee
+#names(ff) <- tax_table(aa)[names(ee),"Genus"]
+names(ff) <- tax_table(aa)[names(ee),lev]
+## plot
+## bottom, left, top, right
+par(mai =  c(2.5, 1, 0.5, 0.5))
+barplot(ff, 
+        las=2, 
+        main=categ, 
+        cex.main=3, 
+        cex.axis=1,
+        cex.lab=2,
+)
+
+
+#png(file='top20GeneraByPhyla.png', width=1600, height=1200)
+#png(file='top20GeneraByGenus.png', width=1600, height=1200)
+par(mfrow=c(2,2))
+
+dev.off()
+
+#### NMS ####
+ps.prop <- transform_sample_counts(ps, function(otu) otu/sum(otu))
+ord.nmds.bray <- ordinate(ps.prop, method="NMDS", distance="bray")
+
+png(file='superRawNMS.png', width=600, height=600)
+p = plot_ordination(ps.prop, ord.nmds.bray, color="Pool", title="Bray NMDS") 
+p$layers <- p$layers[-1]
+#p
+j=0.05
+q = p + geom_jitter(width = j, height=j, size=5, alpha=0.7)
+q
+dev.off()
+
+#################################################################
+## side note, I seem to have lost my qc report for the untrimmed 
+## prokaryotic samples, rebuild:
+allProks=/home/daniel/Documents/analyses/FionaCave/proksUnzipped/
+cat $allProks* > allProkSamples.fastq
+fastqc allProkSamples.fastq -o fastQCoutputs
+#################################################################
+
+
+ps.genus = tax_glom(ps, "Genus", NArm=FALSE)
+
+ps.genus.pool <- merge_samples(ps.genus, "Pool")
+
+ps
+ps.genus
+ps.genus.pool
+
+sample_data(ps.genus.pool)
+
+otu_table(ps.genus.pool)
+
+tax_table(ps.genus.pool)
+
+## we need rank abundances by pool, with taxonomy. How to do this...
+
+
+dim(tax_table(ps.genus.pool))
+
+## essentially we are melding two tables, one of taxonomy 
+## and one of abundances in each table. 
+
+## with each we'll have the asv name as the key.
+
+#aa <- tax_table(ps)
+aa <- tax_table(ps.genus.pool)
+
+row.names(aa)
+
+## abundances in each sample...how to do this...
+bb <- t(otu_table(ps.genus.pool))
+
+all(row.names(aa) == row.names(bb))
+
+all(row.names(aa) == row.names(bb))
+
+## i think the merge function should do this for us.
+
+
+cc <- merge(aa,bb, by="row.names")
+
+
+all(is.na(cc$Species))
+
+new_df <- subset(cc, select = -c(Species))
+
+new_df <- subset(cc, select = -Species)
+
+## seems right. Out to Tillmann?
+
+write.csv(cc, file='fiona16sTaxReadAbundencesByPoolTable.csv')
+
+## what else? we need to get the black boxes out of the stacked bargraph
+
+## so just recolor them by genus?
