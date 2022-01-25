@@ -982,14 +982,16 @@ write.csv(ccNA, file='generaMergeNA.csv')
 
 ## the default
 bb = tip_glom(ps, h=0.2)
-
 aa <- merge_samples(bb, "Pool")
 
-top30 <- names(sort(taxa_sums(aa), decreasing=TRUE))[1:30]
-aa.top30 <- transform_sample_counts(aa, function(OTU) OTU/sum(OTU))
+top30 <- names(sort(taxa_sums(bb), decreasing=TRUE))[1:30]
+aa.top30 <- transform_sample_counts(bb, function(OTU) OTU/sum(OTU))
 aa.top30 <- prune_taxa(top30, aa.top30)
-sample_data(aa.top30)
+
+
 plot_bar(aa.top30, fill="Phylum")
+
+plot_bar(aa.top30, fill="Genus")
 
 ## I think we need a 16s tree...
 ## we need a fasta file. So out to muscle and phyml for this?
@@ -1037,7 +1039,7 @@ aa <- merge_samples(bb, "Pool")
 
 GP.chl = prune_samples(sampleSums(GP.chl)>=20, GP.chl)
 
-ps
+write.csv(t(otu_table(ps)), file="asv_table.csv")
 
 otu_table(aa)[1,]
 
@@ -1049,20 +1051,22 @@ cc <- prune_samples(sample_data(ps)$Pool == "K1", ps)
 #png(file="top20GeneraByPhyla.csv")
 #aa <- merge_samples(bb, "Pool")
 
-bb = tax_glom(ps, "Genus", NArm=FALSE)
-aa <- merge_samples(bb, "Pool")
+aa = tax_glom(ps, "Genus", NArm=FALSE)
+bb <- merge_samples(aa, "Pool")
+
 top20 <- names(sort(taxa_sums(aa), decreasing=TRUE))[1:20]
 aa.top20 <- transform_sample_counts(aa, function(OTU) OTU/sum(OTU))
 aa.top20 <- prune_taxa(top20, aa.top20)
 
 #png(file="top20GeneraByPhyla.csv")
 
-plot_bar(aa.top20, fill="Phylum")
 
+#png(file="graphicsTables/top20GeneraByPhylaBySample.csv")
 plot_bar(aa.top20, fill="Phylum")
+#dev.off()
+
 
 #plot_bar(aa.top20, fill="Genus")
-#dev.off()
 
 ## let's try to get rank abundances for each pool of the common 
 ## genera
@@ -1192,3 +1196,4 @@ write.csv(cc, file='fiona16sTaxReadAbundencesByPoolTable.csv')
 ## what else? we need to get the black boxes out of the stacked bargraph
 
 ## so just recolor them by genus?
+
