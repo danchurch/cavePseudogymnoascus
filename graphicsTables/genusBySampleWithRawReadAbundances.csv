@@ -1,0 +1,375 @@
+"repASV","Kingdom","Phylum","Class","Order","Family","Genus","Species","Oemik-000687","Oemik-000693","Oemik-000698","Oemik-000699","Oemik-000703","Oemik-000704","Oemik-000708","Oemik-000709","Oemik-000713","Oemik-000718","Oemik-000723"
+"ASV1","Bacteria","Proteobacteria","Gammaproteobacteria","Pseudomonadales","Pseudomonadaceae","Pseudomonas",NA,29,76,325,5327,337,3772,95,4554,101,31,55
+"ASV10","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Comamonadaceae","Polaromonas",NA,43,148,132,21,164,44,161,45,209,154,142
+"ASV100","Bacteria","Bacteroidota","Kryptonia","Kryptoniales","BSV26",NA,NA,57,236,76,6,72,20,80,9,47,37,42
+"ASV1004","Bacteria","Abditibacteriota","Abditibacteria","Abditibacteriales","Abditibacteriaceae","Abditibacterium",NA,4,10,0,0,0,0,0,0,0,0,0
+"ASV1006","Bacteria","Verrucomicrobiota","Chlamydiae","Chlamydiales","Waddliaceae","Waddlia",NA,0,10,0,0,0,0,0,0,0,0,0
+"ASV101","Bacteria","Acidobacteriota","Vicinamibacteria","Subgroup 9",NA,NA,NA,22,162,26,0,17,13,27,12,24,12,16
+"ASV1017","Bacteria","Elusimicrobiota","Lineage IIc",NA,NA,NA,NA,0,10,0,0,0,0,0,0,6,0,0
+"ASV1036","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","Devosiaceae","Devosia",NA,0,0,0,0,0,0,10,0,0,0,0
+"ASV104","Bacteria","Dadabacteria","Dadabacteriia","Dadabacteriales",NA,NA,NA,15,77,28,0,28,0,25,4,22,0,15
+"ASV1048","Bacteria","Proteobacteria","Alphaproteobacteria","Caulobacterales","Hyphomonadaceae","Hirschia",NA,0,0,0,0,0,0,0,0,0,0,10
+"ASV1056","Bacteria","Bdellovibrionota","Oligoflexia","0319-6G20",NA,NA,NA,3,13,2,0,3,0,5,0,4,6,0
+"ASV1058","Bacteria","Patescibacteria","Parcubacteria","Candidatus Terrybacteria",NA,NA,NA,0,9,0,0,0,0,0,0,0,0,0
+"ASV106","Bacteria","Entotheonellaeota","Entotheonellia","Entotheonellales","Entotheonellaceae",NA,NA,31,195,42,0,41,7,19,0,20,18,26
+"ASV1060","Bacteria","Firmicutes","Syntrophomonadia","Syntrophomonadales","Syntrophomonadaceae","Syntrophomonas",NA,0,9,0,0,0,0,0,0,0,0,0
+"ASV1064","Bacteria","Elusimicrobiota","Lineage IIb",NA,NA,NA,NA,0,9,0,0,0,0,0,0,0,0,0
+"ASV1069","Bacteria","Chloroflexi","Anaerolineae","Anaerolineales","Anaerolineaceae","UTCFX1",NA,0,9,9,0,0,0,0,0,0,0,0
+"ASV107","Bacteria","Chloroflexi","Dehalococcoidia","SAR202 clade",NA,NA,NA,111,447,66,9,84,0,62,15,72,12,6
+"ASV1078","Bacteria","Myxococcota","Myxococcia","Myxococcales",NA,NA,NA,0,9,0,0,0,0,4,0,0,0,0
+"ASV108","Bacteria","Zixibacteria",NA,NA,NA,NA,NA,42,299,48,0,46,15,48,0,62,103,134
+"ASV1088","Bacteria","Verrucomicrobiota","Chlamydiae","Chlamydiales",NA,NA,NA,0,0,6,0,9,0,0,0,0,2,3
+"ASV1095","Bacteria","Proteobacteria","Gammaproteobacteria","Pseudomonadales","Moraxellaceae","[Agitococcus] lubricus group",NA,0,0,0,0,0,0,9,0,0,0,0
+"ASV11","Bacteria","Verrucomicrobiota","Omnitrophia","Omnitrophales",NA,NA,NA,43,166,26,0,11,3,27,8,31,530,674
+"ASV110","Archaea","Crenarchaeota","Nitrososphaeria","Nitrososphaerales","Nitrososphaeraceae",NA,NA,0,95,32,6,33,10,47,14,47,0,0
+"ASV1104","Bacteria","Chloroflexi","Anaerolineae","Caldilineales","Caldilineaceae","Litorilinea",NA,0,6,0,0,0,0,0,0,0,9,0
+"ASV1107","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales",NA,NA,NA,0,0,0,0,0,0,0,0,0,9,0
+"ASV1111","Bacteria","Sumerlaeota","Sumerlaeia","Sumerlaeales","Sumerlaeaceae","Sumerlaea",NA,0,0,0,0,0,0,0,0,0,0,9
+"ASV112","Bacteria","Bacteroidota","Bacteroidia","Flavobacteriales","Flavobacteriaceae","Flavobacterium",NA,0,13,15,5,20,19,38,13,26,5,3
+"ASV1121","Bacteria","AncK6",NA,NA,NA,NA,NA,0,10,3,0,0,0,0,0,0,3,3
+"ASV1125","Bacteria","Firmicutes","Clostridia",NA,NA,NA,NA,0,8,0,0,0,0,0,0,0,0,0
+"ASV1134","Bacteria","Proteobacteria","Alphaproteobacteria","Dongiales","Dongiaceae","Dongia",NA,0,8,0,0,0,0,0,0,0,5,0
+"ASV1143","Bacteria","Verrucomicrobiota",NA,NA,NA,NA,NA,0,8,0,0,0,0,0,0,0,4,4
+"ASV1144","Bacteria","Actinobacteriota","Thermoleophilia","Solirubrobacterales","Solirubrobacteraceae","Conexibacter",NA,0,8,0,0,0,0,0,0,0,0,0
+"ASV1151","Bacteria","Proteobacteria","Alphaproteobacteria","Sphingomonadales","Sphingomonadaceae","Sphingobium",NA,0,0,0,0,0,8,0,0,0,0,0
+"ASV1155","Bacteria","Cyanobacteria","Cyanobacteriia","Chloroplast",NA,NA,NA,0,0,0,0,0,0,4,0,4,0,0
+"ASV1159","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Sutterellaceae",NA,NA,0,0,0,0,0,0,5,0,0,0,3
+"ASV1165","Bacteria","Myxococcota","Polyangia","mle1-27",NA,NA,NA,0,0,0,0,0,0,8,0,0,0,0
+"ASV1174","Bacteria","Elusimicrobiota","Elusimicrobia","MVP-88",NA,NA,NA,0,12,0,0,0,0,0,0,0,12,0
+"ASV118","Bacteria","Firmicutes","Clostridia","Clostridiales","Clostridiaceae","Clostridium sensu stricto 13",NA,15,114,5,0,0,0,0,0,0,0,0
+"ASV1181","Bacteria","Myxococcota","Polyangia","MSB-4B10",NA,NA,NA,0,0,0,0,0,0,0,0,0,0,8
+"ASV1192","Bacteria","Myxococcota","Polyangia","VHS-B4-70",NA,NA,NA,0,7,0,0,0,0,0,0,0,0,0
+"ASV1198","Bacteria","Firmicutes","Clostridia","Peptostreptococcales-Tissierellales","Peptostreptococcaceae","Clostridioides",NA,0,7,0,0,0,0,0,0,0,0,0
+"ASV12","Archaea","Crenarchaeota","Nitrososphaeria","Nitrosopumilales","Nitrosopumilaceae","Candidatus Nitrosotenuis",NA,314,865,144,21,196,32,92,38,137,85,110
+"ASV1202","Bacteria","Myxococcota","Polyangia","UASB-TL25",NA,NA,NA,0,7,0,0,0,3,0,0,0,0,0
+"ASV121","Bacteria","Acidobacteriota","Vicinamibacteria","Vicinamibacterales","Vicinamibacteraceae",NA,NA,60,290,42,0,57,0,62,0,49,66,52
+"ASV122","Bacteria","Verrucomicrobiota","Verrucomicrobiae","Pedosphaerales","Pedosphaeraceae",NA,NA,47,181,16,0,19,0,42,0,29,125,148
+"ASV1234","Bacteria","Firmicutes","Clostridia","Gracilibacteraceae","Lutispora",NA,NA,0,0,0,0,0,0,0,0,0,7,0
+"ASV1239","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","Hyphomicrobiaceae","Pedomicrobium",NA,0,0,0,0,0,0,0,0,0,7,0
+"ASV1242","Bacteria","Bdellovibrionota","Bdellovibrionia","Bdellovibrionales","Bdellovibrionaceae","OM27 clade",NA,0,0,0,0,0,0,0,0,5,0,7
+"ASV1244","Bacteria","Actinobacteriota","Actinobacteria","Micrococcales","Micrococcaceae","Paeniglutamicibacter",NA,0,0,0,0,0,0,0,0,0,0,7
+"ASV1248","Bacteria","Myxococcota","Polyangia","Nannocystales","Nannocystaceae",NA,NA,0,0,0,0,0,0,0,0,0,0,7
+"ASV1253","Bacteria","Proteobacteria","Alphaproteobacteria","Caulobacterales","Hyphomonadaceae","SWB02",NA,0,5,0,0,0,0,0,0,0,0,7
+"ASV1254","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","Xanthobacteraceae","Tardiphaga",NA,0,0,0,0,0,0,0,0,0,0,7
+"ASV1255","Bacteria","Proteobacteria","Gammaproteobacteria","Coxiellales","Coxiellaceae","Coxiella",NA,0,4,0,0,0,0,0,0,0,0,12
+"ASV1257","Bacteria","Acidobacteriota","Acidobacteriae","Elev-16S-1166",NA,NA,NA,0,0,0,0,0,0,0,0,0,0,7
+"ASV1259","Bacteria","Patescibacteria",NA,NA,NA,NA,NA,6,5,0,0,0,0,0,0,0,0,0
+"ASV126","Bacteria","Chloroflexi","Gitt-GS-136",NA,NA,NA,NA,14,71,0,0,5,8,28,5,20,2,0
+"ASV1274","Bacteria","Actinobacteriota","Acidimicrobiia","IMCC26256",NA,NA,NA,0,6,0,0,0,0,0,0,5,0,0
+"ASV128","Bacteria","Proteobacteria","Alphaproteobacteria","Ferrovibrionales",NA,NA,NA,0,24,18,0,7,6,27,8,17,9,11
+"ASV1280","Bacteria","Proteobacteria","Gammaproteobacteria","EPR3968-O8a-Bc78",NA,NA,NA,0,6,0,0,0,0,0,0,0,0,0
+"ASV1284","Bacteria","Firmicutes","Clostridia","Lachnospirales","Lachnospiraceae","Mobilitalea",NA,0,6,0,0,0,0,0,0,0,0,0
+"ASV1296","Bacteria","Myxococcota","Polyangia",NA,NA,NA,NA,0,0,0,0,6,0,0,0,4,0,0
+"ASV1297","Bacteria","Bacteroidota",NA,NA,NA,NA,NA,0,0,0,0,6,0,0,0,0,0,0
+"ASV13","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales",NA,NA,NA,129,655,92,22,118,0,73,9,51,38,57
+"ASV1306","Bacteria","Acidobacteriota","AT-s3-28",NA,NA,NA,NA,0,0,0,0,0,0,6,0,0,0,0
+"ASV1315","Bacteria","Desulfobacterota","Desulfuromonadia","PB19",NA,NA,NA,0,0,0,0,0,0,0,0,0,6,0
+"ASV132","Bacteria","Acidobacteriota","Subgroup 5",NA,NA,NA,NA,38,109,21,0,11,0,15,6,13,0,10
+"ASV1326","Archaea","Micrarchaeota","Micrarchaeia","Micrarchaeales",NA,NA,NA,0,5,0,0,0,0,0,0,0,0,6
+"ASV1331","Bacteria","Proteobacteria","Gammaproteobacteria","Steroidobacterales","Steroidobacteraceae",NA,NA,0,0,0,0,0,0,0,0,0,0,6
+"ASV1334","Bacteria","Actinobacteriota",NA,NA,NA,NA,NA,0,0,0,0,0,0,0,0,0,0,6
+"ASV1340","Bacteria","Patescibacteria","ABY1",NA,NA,NA,NA,0,9,0,0,3,0,0,0,0,0,0
+"ASV1344","Bacteria","Patescibacteria","Microgenomatia","Candidatus Curtissbacteria",NA,NA,NA,0,5,0,0,0,0,0,0,0,0,0
+"ASV1350","Bacteria","Firmicutes","Clostridia","Lachnospirales","Lachnospiraceae","Cellulosilyticum",NA,0,5,0,0,0,0,0,0,0,0,0
+"ASV1353","Bacteria","Dependentiae","Babeliae","Babeliales","Babeliaceae",NA,NA,0,5,0,0,0,0,0,0,0,0,0
+"ASV1354","Bacteria","Proteobacteria","Gammaproteobacteria","Salinisphaerales","Solimonadaceae",NA,NA,0,5,0,0,0,0,0,0,0,0,0
+"ASV136","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","A0839",NA,NA,0,0,0,0,0,0,0,0,14,72,109
+"ASV1382","Bacteria","Chloroflexi","Chloroflexia","Thermomicrobiales","AKYG1722",NA,NA,0,0,0,0,0,0,5,0,0,0,0
+"ASV139","Bacteria","Acidobacteriota","Holophagae","Subgroup 7",NA,NA,NA,29,101,15,5,14,0,50,7,34,0,0
+"ASV1396","Bacteria","FCPU426",NA,NA,NA,NA,NA,0,0,0,0,0,0,0,0,5,0,0
+"ASV14","Bacteria","Acidobacteriota","Vicinamibacteria","Vicinamibacterales",NA,NA,NA,221,943,250,42,165,74,240,70,212,135,164
+"ASV1400","Bacteria","Bacteroidota","Bacteroidia","Flavobacteriales","Crocinitomicaceae","Crocinitomix",NA,0,0,0,0,0,0,0,0,0,5,0
+"ASV1402","Bacteria","Proteobacteria","Alphaproteobacteria","Paracaedibacterales","Paracaedibacteraceae","Candidatus Paracaedibacter",NA,0,0,0,0,0,0,0,0,0,3,2
+"ASV1404","Bacteria","Spirochaetota","Leptospirae","Leptospirales","Leptospiraceae",NA,NA,0,0,0,0,0,0,0,0,0,5,4
+"ASV1405","Bacteria","Cyanobacteria",NA,NA,NA,NA,NA,0,0,0,0,0,0,0,0,0,3,2
+"ASV1406","Bacteria","Bacteroidota","OC31",NA,NA,NA,NA,0,4,0,0,0,0,0,0,0,5,0
+"ASV1408","Bacteria","Actinobacteriota","Actinobacteria","Corynebacteriales","Mycobacteriaceae","Mycobacterium",NA,0,0,0,0,0,0,0,0,0,5,5
+"ASV141","Bacteria","Actinobacteriota","Thermoleophilia","Gaiellales","Gaiellaceae","Gaiella",NA,22,110,21,0,14,0,49,0,29,22,21
+"ASV1414","Bacteria","Planctomycetota","Phycisphaerae","Phycisphaerales","Phycisphaeraceae","CL500-3",NA,0,0,0,0,0,0,0,0,0,0,5
+"ASV1415","Bacteria","Myxococcota",NA,NA,NA,NA,NA,0,3,0,0,0,0,0,0,0,0,5
+"ASV143","Bacteria","Gemmatimonadota","S0134 terrestrial group",NA,NA,NA,NA,18,98,0,0,0,0,0,0,0,0,6
+"ASV1443","Bacteria","Patescibacteria","Parcubacteria","Candidatus Brennerbacteria",NA,NA,NA,0,4,0,0,4,0,0,0,0,0,0
+"ASV1447","Bacteria","Hydrogenedentes","Hydrogenedentia","Hydrogenedentiales","Hydrogenedensaceae",NA,NA,0,2,0,0,0,0,0,0,0,2,0
+"ASV1458","Bacteria","Proteobacteria","Alphaproteobacteria","Sneathiellales","Sneathiellaceae",NA,NA,0,4,0,0,0,0,0,0,0,0,0
+"ASV1459","Bacteria","Myxococcota","Polyangia","Blfdi19",NA,NA,NA,0,4,0,0,0,0,0,0,0,0,0
+"ASV1469","Bacteria","Elusimicrobiota","Elusimicrobia",NA,NA,NA,NA,0,0,4,0,0,0,0,0,0,0,0
+"ASV1472","Bacteria","Proteobacteria","Gammaproteobacteria","Pseudomonadales","Moraxellaceae","Acinetobacter",NA,0,0,4,0,0,0,0,0,0,0,0
+"ASV1474","Bacteria","Verrucomicrobiota","Verrucomicrobiae","Chthoniobacterales","Terrimicrobiaceae","FukuN18 freshwater group",NA,0,0,0,4,0,0,0,0,0,0,0
+"ASV1476","Archaea","Crenarchaeota","Nitrososphaeria","SCGC AB-179-E04",NA,NA,NA,0,0,0,0,4,0,0,0,0,0,0
+"ASV148","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","Rhizobiales Incertae Sedis",NA,NA,33,115,21,0,15,0,51,0,57,37,38
+"ASV1486","Bacteria","Actinobacteriota","Acidimicrobiia",NA,NA,NA,NA,0,0,0,0,0,0,4,0,0,0,0
+"ASV149","Bacteria","Chloroflexi","Dehalococcoidia",NA,NA,NA,NA,20,53,10,2,24,0,6,2,0,0,0
+"ASV1497","Bacteria","Bacteroidota","Bacteroidia","Flavobacteriales","Crocinitomicaceae","Fluviicola",NA,0,0,0,0,0,0,0,0,4,0,0
+"ASV1498","Bacteria","Firmicutes","Desulfitobacteriia","Desulfitobacteriales","Desulfitobacteriaceae","Desulfosporosinus",NA,0,0,0,0,0,0,0,0,0,4,0
+"ASV15","Archaea","Crenarchaeota","Nitrososphaeria",NA,NA,NA,NA,11,29,207,43,238,105,160,95,174,66,75
+"ASV1502","Bacteria","Acetothermia","Acetothermiia",NA,NA,NA,NA,0,0,0,0,0,0,0,0,0,2,2
+"ASV1504","Bacteria","Acidobacteriota","Blastocatellia","DS-100",NA,NA,NA,0,0,0,0,3,0,0,0,0,4,0
+"ASV1508","Bacteria","Bacteroidota","Bacteroidia","Cytophagales","Microscillaceae","Ohtaekwangia",NA,0,0,0,0,0,0,0,0,0,4,0
+"ASV1511","Bacteria","Chloroflexi","Anaerolineae","SBR1031",NA,NA,NA,0,0,0,0,0,0,0,0,0,0,4
+"ASV152","Bacteria","SAR324 clade(Marine group B)",NA,NA,NA,NA,NA,6,15,20,0,18,7,16,6,7,25,34
+"ASV1523","Bacteria","Bacteroidota","Ignavibacteria","Ignavibacteriales",NA,NA,NA,3,0,0,0,0,0,0,0,0,0,0
+"ASV1527","Bacteria","Proteobacteria",NA,NA,NA,NA,NA,0,3,0,0,0,0,0,0,0,0,0
+"ASV153","Bacteria","Acidobacteriota","Acidobacteriae","Subgroup 15",NA,NA,NA,49,216,0,0,27,10,32,0,27,0,0
+"ASV1532",NA,NA,NA,NA,NA,NA,NA,0,3,0,0,0,0,0,0,0,2,0
+"ASV1535","Bacteria","Patescibacteria","Parcubacteria","Candidatus Zambryskibacteria",NA,NA,NA,0,3,0,0,0,0,0,0,0,0,0
+"ASV1536","Archaea","Halobacterota","Methanocellia","Methanocellales","Methanocellaceae","Methanocella",NA,0,3,0,0,0,0,0,0,0,0,0
+"ASV1546","Bacteria","Planctomycetota","BD7-11",NA,NA,NA,NA,0,3,0,0,0,0,0,0,0,0,0
+"ASV1550","Bacteria","Planctomycetota","028H05-P-BN-P5",NA,NA,NA,NA,0,3,0,0,0,0,0,0,0,0,0
+"ASV1555","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","Beijerinckiaceae","FFCH5858",NA,0,3,0,0,0,0,0,0,0,0,0
+"ASV1559","Bacteria","Chloroflexi","Anaerolineae","Caldilineales","Caldilineaceae",NA,NA,0,3,0,0,0,0,0,0,0,0,0
+"ASV1560","Bacteria","Chloroflexi","Ktedonobacteria","C0119",NA,NA,NA,0,0,3,0,0,0,0,0,0,0,0
+"ASV157","Bacteria","Calditrichota","Calditrichia","Calditrichales","Calditrichaceae","JdFR-76",NA,19,82,29,0,40,0,38,0,19,58,72
+"ASV1571","Bacteria","Myxococcota","Myxococcia","Myxococcales","Myxococcaceae",NA,NA,0,0,0,0,3,0,0,0,0,0,0
+"ASV1574","Bacteria","Myxococcota","Myxococcia","Myxococcales","Myxococcaceae","P3OB-42",NA,0,0,0,0,6,0,0,0,0,0,0
+"ASV1575","Bacteria","Patescibacteria","Microgenomatia","Candidatus Woykebacteria",NA,NA,NA,0,0,0,0,3,0,0,0,0,0,0
+"ASV1598","Archaea","Euryarchaeota","Methanobacteria","Methanobacteriales","Methanobacteriaceae","Methanobacterium",NA,0,0,0,0,0,0,0,0,3,0,0
+"ASV1599","Bacteria","Verrucomicrobiota","Verrucomicrobiae","Opitutales","Opitutaceae","Lacunisphaera",NA,0,0,0,0,0,0,0,0,3,0,0
+"ASV1609","Bacteria","Verrucomicrobiota","Verrucomicrobiae","Pedosphaerales","Pedosphaeraceae","ADurb.Bin118",NA,0,0,0,0,0,0,0,0,0,3,0
+"ASV161","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Oxalobacteraceae","Massilia",NA,0,0,14,0,11,14,28,20,26,0,0
+"ASV1615","Bacteria","Proteobacteria","Alphaproteobacteria","Elsterales","Elsteraceae",NA,NA,0,0,0,0,0,0,0,0,0,3,0
+"ASV162","Bacteria","Dependentiae","Babeliae","Babeliales","UBA12409",NA,NA,0,7,0,0,0,34,42,26,50,10,0
+"ASV1628","Bacteria","Proteobacteria","Gammaproteobacteria","KF-JG30-C25",NA,NA,NA,0,0,0,0,0,0,0,0,0,0,3
+"ASV1629","Bacteria","Bacteroidota","Bacteroidia","Chitinophagales","Saprospiraceae","Aureispira",NA,2,0,0,0,0,0,0,0,0,0,0
+"ASV163","Bacteria","Bacteroidota","Bacteroidia","Chitinophagales","Saprospiraceae",NA,NA,0,11,0,0,0,2,6,0,4,48,51
+"ASV1636","Bacteria","Patescibacteria","ABY1","Candidatus Uhrbacteria",NA,NA,NA,0,2,0,0,0,0,0,0,0,2,0
+"ASV166","Bacteria","Planctomycetota","Planctomycetes","Gemmatales","Gemmataceae",NA,NA,50,316,33,0,0,0,49,14,52,126,189
+"ASV1668","Archaea","Halobacterota",NA,NA,NA,NA,NA,0,0,0,0,0,2,0,0,0,0,0
+"ASV1681","Bacteria","Actinobacteriota","Actinobacteria",NA,NA,NA,NA,0,0,0,0,0,0,0,2,0,0,0
+"ASV1683","Bacteria","Patescibacteria","Parcubacteria","Candidatus Vogelbacteria",NA,NA,NA,0,0,0,0,0,0,0,0,2,0,0
+"ASV1685","Bacteria","Planctomycetota","Planctomycetes","Planctomycetales","Gimesiaceae",NA,NA,0,0,0,0,0,0,0,0,2,0,0
+"ASV169","Bacteria","Bacteroidota","Ignavibacteria","SJA-28",NA,NA,NA,7,58,12,2,14,0,14,0,16,14,35
+"ASV1692","Bacteria","Actinobacteriota","Actinobacteria","Pseudonocardiales","Pseudonocardiaceae","Pseudonocardia",NA,0,0,0,0,0,0,0,0,2,0,0
+"ASV1695","Bacteria","Verrucomicrobiota","Chlamydiae","Chlamydiales","Chlamydiaceae",NA,NA,0,0,0,0,0,0,0,0,0,2,0
+"ASV17","Bacteria","Acidobacteriota","Acidobacteriae","Subgroup 2",NA,NA,NA,320,1375,124,0,151,19,218,20,164,49,32
+"ASV170","Bacteria","Acidobacteriota","Subgroup 22",NA,NA,NA,NA,33,122,20,6,41,9,33,7,36,37,42
+"ASV1701","Bacteria","Planctomycetota","Planctomycetes","Gemmatales","Gemmataceae","Fimbriiglobus",NA,0,0,0,0,0,0,0,0,0,2,0
+"ASV1707","Bacteria","Verrucomicrobiota","Lentisphaeria","Victivallales","Arctic95B-14",NA,NA,0,0,0,0,0,0,0,0,0,0,2
+"ASV171","Bacteria","Bdellovibrionota","Bdellovibrionia","Bdellovibrionales","Bdellovibrionaceae","Bdellovibrio",NA,0,6,35,11,24,0,16,7,19,3,7
+"ASV174","Bacteria","Firmicutes","Clostridia","Clostridiales","Clostridiaceae","Clostridium sensu stricto 1",NA,10,69,0,0,0,0,6,0,4,0,0
+"ASV177","Bacteria","Firmicutes","Bacilli","Bacillales","Planococcaceae",NA,NA,0,60,0,0,6,0,28,0,18,0,0
+"ASV178","Bacteria","Chloroflexi","Anaerolineae","Anaerolineales","Anaerolineaceae",NA,NA,14,99,19,9,20,10,22,0,25,0,4
+"ASV180","Bacteria","Acidobacteriota","Blastocatellia","11-24",NA,NA,NA,29,122,18,0,26,0,42,0,35,71,97
+"ASV183","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Nitrosomonadaceae","mle1-7",NA,5,73,34,0,21,0,22,0,17,7,9
+"ASV185","Archaea","Nanoarchaeota","Nanoarchaeia","Woesearchaeales","GW2011_GWC1_47_15",NA,NA,31,137,24,0,28,0,0,0,0,34,43
+"ASV189","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","Xanthobacteraceae","Afipia",NA,0,0,0,0,0,0,45,12,0,27,0
+"ASV190","Bacteria","Planctomycetota","Pla3 lineage",NA,NA,NA,NA,9,56,5,0,0,0,15,0,20,37,65
+"ASV192","Bacteria","GAL15",NA,NA,NA,NA,NA,8,78,17,0,13,6,48,8,23,0,0
+"ASV193","Bacteria","Bacteroidota","Bacteroidia","Cytophagales","Microscillaceae",NA,NA,10,60,7,3,10,2,0,0,5,38,40
+"ASV195","Bacteria","Proteobacteria","Gammaproteobacteria","Nitrosococcales","Nitrosococcaceae","3PJM14",NA,0,32,0,0,11,7,0,0,13,0,16
+"ASV197","Bacteria","Acidobacteriota","Acidobacteriae","PAUC26f",NA,NA,NA,44,133,24,0,0,0,55,0,24,18,23
+"ASV2","Bacteria","Methylomirabilota","Methylomirabilia","Methylomirabilales","Methylomirabilaceae","wb1-A12",NA,290,1165,348,53,312,122,301,112,319,158,148
+"ASV202","Bacteria","Patescibacteria","Parcubacteria","Candidatus Yanofskybacteria",NA,NA,NA,13,125,6,0,8,6,5,0,12,0,3
+"ASV209","Archaea","Crenarchaeota","Nitrososphaeria","Marine Benthic Group A",NA,NA,NA,23,116,13,0,0,0,0,0,16,0,5
+"ASV21","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Nitrosomonadaceae","IS-44",NA,189,714,82,0,93,45,145,36,130,192,204
+"ASV211","Bacteria","Planctomycetota","Phycisphaerae","Phycisphaerales","Phycisphaeraceae","AKYG587",NA,13,111,0,0,0,0,0,0,0,16,23
+"ASV212","Bacteria","Acidobacteriota","Acidobacteriae",NA,NA,NA,NA,0,0,0,0,0,0,0,0,0,71,53
+"ASV217","Bacteria","Proteobacteria","Gammaproteobacteria","Pseudomonadales","Moraxellaceae","Cavicella",NA,0,23,0,0,14,0,19,0,15,0,0
+"ASV223","Bacteria","Gemmatimonadota","AKAU4049",NA,NA,NA,NA,0,13,8,0,6,0,24,0,18,0,0
+"ASV225","Bacteria","Proteobacteria","Gammaproteobacteria",NA,NA,NA,NA,6,40,3,0,6,0,21,0,6,68,88
+"ASV226","Bacteria","Patescibacteria","ABY1","Candidatus Magasanikbacteria",NA,NA,NA,0,0,0,0,0,0,4,0,4,30,39
+"ASV228","Bacteria","Bacteroidota","Bacteroidia","Chitinophagales",NA,NA,NA,0,25,0,0,0,0,7,0,0,28,39
+"ASV232","Bacteria","Planctomycetota","Phycisphaerae",NA,NA,NA,NA,3,67,15,0,16,0,11,0,15,0,11
+"ASV233","Bacteria","Actinobacteriota","Thermoleophilia","Solirubrobacterales","67-14",NA,NA,0,0,0,0,0,0,0,0,8,41,38
+"ASV241","Bacteria","Actinobacteriota","Actinobacteria","Micrococcales","Micrococcaceae","Arthrobacter",NA,0,52,0,0,0,0,13,0,0,0,0
+"ASV248","Bacteria","Actinobacteriota","Acidimicrobiia","Actinomarinales",NA,NA,NA,4,34,6,0,2,5,12,5,7,0,0
+"ASV249","Bacteria","Acidobacteriota","Thermoanaerobaculia","Thermoanaerobaculales","Thermoanaerobaculaceae","Subgroup 10",NA,8,62,0,0,4,8,51,16,15,0,0
+"ASV25","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Oxalobacteraceae","Undibacterium",NA,87,335,213,42,255,14,77,47,92,0,25
+"ASV250","Bacteria","Planctomycetota","Planctomycetes","Pirellulales","Pirellulaceae",NA,NA,0,113,11,0,2,0,0,0,10,44,75
+"ASV251","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Oxalobacteraceae","Duganella",NA,0,0,0,8,9,0,17,6,22,0,0
+"ASV253","Bacteria","Acidobacteriota","Blastocatellia","Blastocatellales","Blastocatellaceae",NA,NA,13,30,0,0,0,0,0,5,0,29,16
+"ASV255","Bacteria","Fibrobacterota","Fibrobacteria","Fibrobacterales","Fibrobacteraceae","possible genus 04",NA,0,3,4,0,15,7,4,4,0,17,6
+"ASV257","Bacteria","Proteobacteria","Alphaproteobacteria","Reyranellales","Reyranellaceae","Reyranella",NA,0,0,10,0,5,2,5,0,0,21,39
+"ASV265","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Comamonadaceae",NA,NA,0,35,0,0,0,0,0,0,22,0,0
+"ASV267","Bacteria","Verrucomicrobiota","Chlamydiae","Chlamydiales","cvE6",NA,NA,0,14,6,0,0,5,0,5,11,43,30
+"ASV268","Bacteria","Planctomycetota","Phycisphaerae","Phycisphaerales","Phycisphaeraceae",NA,NA,0,0,2,0,0,0,0,0,0,26,36
+"ASV270","Bacteria","Gemmatimonadota","BD2-11 terrestrial group",NA,NA,NA,NA,13,56,9,0,4,0,15,0,8,15,15
+"ASV271","Bacteria","Acidobacteriota","Acidobacteriae","Subgroup 12",NA,NA,NA,18,99,0,0,9,0,0,9,16,0,0
+"ASV273","Bacteria","Acidobacteriota","Acidobacteriae","Subgroup 13",NA,NA,NA,0,36,20,0,0,0,0,0,0,0,0
+"ASV275","Bacteria","Planctomycetota","Phycisphaerae","mle1-8",NA,NA,NA,13,42,0,0,0,0,7,0,0,13,13
+"ASV276","Bacteria","Myxococcota","Polyangia","Polyangiales","Sandaracinaceae",NA,NA,2,8,0,0,0,0,5,0,3,30,44
+"ASV283","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","Amb-16S-1323",NA,NA,13,40,0,0,0,0,0,0,0,0,23
+"ASV284","Bacteria","Proteobacteria","Gammaproteobacteria","Xanthomonadales","Xanthomonadaceae","Lysobacter",NA,0,10,8,0,0,0,13,5,17,0,0
+"ASV288","Bacteria","Planctomycetota","Phycisphaerae","CCM11a",NA,NA,NA,34,189,20,0,43,3,28,2,26,82,143
+"ASV29","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Comamonadaceae","Rhodoferax",NA,63,182,68,20,129,0,27,0,27,25,31
+"ASV292","Bacteria","Proteobacteria","Gammaproteobacteria","Pseudomonadales",NA,NA,NA,0,21,0,0,0,0,17,0,13,49,53
+"ASV298","Bacteria","Bdellovibrionota","Bdellovibrionia","Bacteriovoracales","Bacteriovoracaceae",NA,NA,0,4,0,0,0,0,0,0,0,18,29
+"ASV299","Bacteria","Acidobacteriota","Vicinamibacteria","Subgroup 17",NA,NA,NA,0,41,12,0,5,12,34,0,17,24,27
+"ASV3","Archaea","Nanoarchaeota","Nanoarchaeia","Woesearchaeales",NA,NA,NA,348,1567,110,20,132,214,221,165,303,1259,1667
+"ASV300","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","Hyphomicrobiaceae","Hyphomicrobium",NA,0,33,0,0,0,0,0,0,0,16,35
+"ASV303","Bacteria","Actinobacteriota","MB-A2-108",NA,NA,NA,NA,0,43,7,0,4,4,31,7,20,9,10
+"ASV307","Bacteria","Firmicutes","Clostridia","Gracilibacteraceae","Gracilibacter",NA,NA,9,40,0,0,0,0,0,0,0,0,0
+"ASV308","Bacteria","Chloroflexi","JG30-KF-CM66",NA,NA,NA,NA,5,69,39,0,19,4,36,10,3,27,15
+"ASV313","Bacteria","Firmicutes","Bacilli","Bacillales","Planococcaceae","Lysinibacillus",NA,20,28,0,0,0,0,0,0,0,0,0
+"ASV317","Bacteria","Chloroflexi","Anaerolineae","RBG-13-54-9",NA,NA,NA,6,36,7,0,9,0,0,0,4,23,32
+"ASV319","Bacteria","Patescibacteria","Parcubacteria","Candidatus Ryanbacteria",NA,NA,NA,0,0,0,0,0,0,0,0,0,19,29
+"ASV321","Bacteria","Planctomycetota","Planctomycetes","Pirellulales","Pirellulaceae","Pirellula",NA,11,67,7,0,10,0,8,0,11,17,23
+"ASV325","Bacteria","Chloroflexi","KD4-96",NA,NA,NA,NA,0,47,10,4,0,0,30,0,23,0,9
+"ASV33","Bacteria","Methylomirabilota","Methylomirabilia","Methylomirabilales","Methylomirabilaceae","MIZ17",NA,69,338,42,19,57,31,72,30,90,12,21
+"ASV330","Bacteria","Patescibacteria","Parcubacteria","Candidatus Kaiserbacteria",NA,NA,NA,5,15,6,13,20,0,5,2,3,0,7
+"ASV333","Bacteria","Acidobacteriota","Acidobacteriae","Bryobacterales","Bryobacteraceae","Bryobacter",NA,0,0,0,0,0,0,9,0,0,20,22
+"ASV336","Bacteria","Patescibacteria","Berkelbacteria",NA,NA,NA,NA,0,17,5,0,5,4,10,5,4,0,0
+"ASV34","Bacteria","Methylomirabilota","Methylomirabilia","Methylomirabilales","Methylomirabilaceae","Candidatus Methylomirabilis",NA,49,118,30,0,24,20,56,22,50,84,80
+"ASV342","Bacteria","Planctomycetota","Phycisphaerae","Tepidisphaerales","WD2101 soil group",NA,NA,7,20,0,0,0,2,9,3,3,0,0
+"ASV349","Bacteria","Firmicutes","Bacilli","Paenibacillales","Paenibacillaceae","Paenibacillus",NA,3,66,11,0,4,5,19,10,0,4,0
+"ASV35","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Comamonadaceae","Hydrogenophaga",NA,0,34,117,27,133,0,60,0,82,27,50
+"ASV353","Bacteria","Patescibacteria","Gracilibacteria","Candidatus Peribacteria",NA,NA,NA,0,4,0,0,0,0,5,0,3,29,18
+"ASV356","Bacteria","Firmicutes","Bacilli","Paenibacillales","Paenibacillaceae","Cohnella",NA,4,19,0,0,0,0,19,0,0,0,0
+"ASV36","Bacteria","Bacteroidota","Bacteroidia","Chitinophagales","Chitinophagaceae","Terrimonas",NA,13,26,4,0,11,0,23,0,20,212,319
+"ASV363","Archaea","Nanoarchaeota","Nanoarchaeia","Woesearchaeales","GW2011","AR15",NA,11,0,0,0,0,0,0,0,0,18,24
+"ASV364","Bacteria","Proteobacteria","Gammaproteobacteria","Steroidobacterales","Woeseiaceae","Woeseia",NA,0,0,0,0,0,0,0,0,0,23,19
+"ASV37","Bacteria",NA,NA,NA,NA,NA,NA,138,819,101,4,87,14,100,16,86,130,169
+"ASV373","Bacteria","Bacteroidota","Ignavibacteria","Ignavibacteriales","Ignavibacteriaceae","Ignavibacterium",NA,6,36,7,0,5,0,0,0,8,0,0
+"ASV375","Archaea","Thermoplasmatota","Thermoplasmata",NA,NA,NA,NA,9,49,0,0,0,0,12,0,4,0,0
+"ASV38","Archaea","Thermoplasmatota","Thermoplasmata","Methanomassiliicoccales",NA,NA,NA,55,241,78,10,95,12,57,21,55,19,16
+"ASV383","Bacteria","PAUC34f",NA,NA,NA,NA,NA,0,0,0,0,0,0,3,3,0,18,22
+"ASV384","Archaea","Crenarchaeota","Bathyarchaeia",NA,NA,NA,NA,5,15,4,0,4,0,9,0,5,0,0
+"ASV39","Bacteria","Myxococcota","bacteriap25",NA,NA,NA,NA,127,511,71,4,75,8,81,16,68,73,105
+"ASV390","Bacteria","Bacteroidota","Bacteroidia","Sphingobacteriales","AKYH767",NA,NA,0,15,2,0,7,0,3,0,0,24,15
+"ASV394","Bacteria","Chloroflexi","Anaerolineae","Ardenticatenales",NA,NA,NA,8,48,0,0,0,0,5,0,0,0,5
+"ASV399","Bacteria","Proteobacteria","Gammaproteobacteria","Pseudomonadales","Moraxellaceae",NA,NA,0,0,0,0,0,6,17,0,15,0,0
+"ASV4","Archaea","Crenarchaeota","Nitrososphaeria","Nitrosopumilales","Nitrosopumilaceae",NA,NA,580,2042,357,74,471,218,380,161,476,293,365
+"ASV400","Bacteria","Proteobacteria","Alphaproteobacteria","Rickettsiales","Mitochondria",NA,NA,0,0,0,0,0,0,0,0,0,15,33
+"ASV402","Bacteria","Verrucomicrobiota","Verrucomicrobiae","Opitutales","Opitutaceae","Opitutus",NA,0,9,0,0,0,0,6,0,0,19,19
+"ASV409","Bacteria","Proteobacteria","Alphaproteobacteria","NRL2",NA,NA,NA,0,0,0,0,0,0,0,0,7,24,13
+"ASV41","Bacteria","Proteobacteria","Gammaproteobacteria","Legionellales","Legionellaceae",NA,NA,44,213,45,5,41,5,27,0,18,4,7
+"ASV411","Archaea","Crenarchaeota","Nitrososphaeria","Group 1.1c",NA,NA,NA,13,70,5,0,0,0,0,0,6,0,0
+"ASV413","Bacteria","Verrucomicrobiota","Verrucomicrobiae","Pedosphaerales","Pedosphaeraceae","ADurb.Bin063-1",NA,0,32,4,0,0,0,0,0,0,0,0
+"ASV415","Bacteria","Planctomycetota","Planctomycetes","Pirellulales","Pirellulaceae","Blastopirellula",NA,0,0,0,0,0,0,0,0,0,32,30
+"ASV417","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","Xanthobacteraceae","Pseudolabrys",NA,0,0,0,0,0,0,0,0,0,23,13
+"ASV42","Bacteria","Gemmatimonadota","Gemmatimonadetes","Gemmatimonadales","Gemmatimonadaceae",NA,NA,190,730,119,20,117,48,324,42,209,114,172
+"ASV420","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Nitrosomonadaceae","Nitrosospira",NA,13,22,0,0,0,0,0,0,0,0,0
+"ASV422","Bacteria","Patescibacteria","Gracilibacteria","Candidatus Peregrinibacteria",NA,NA,NA,0,31,0,0,3,0,3,0,5,0,0
+"ASV429","Bacteria","Actinobacteriota","Actinobacteria","Micrococcales","Micrococcaceae",NA,NA,0,35,0,0,0,0,0,0,0,0,0
+"ASV43","Bacteria","Methylomirabilota","Methylomirabilia","Rokubacteriales",NA,NA,NA,87,400,121,27,113,39,132,40,153,55,64
+"ASV431","Bacteria","Bacteroidota","Bacteroidia","Chitinophagales","Saprospiraceae","Phaeodactylibacter",NA,0,7,0,0,0,0,10,0,9,25,14
+"ASV433","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","Rhizobiales Incertae Sedis","Nordella",NA,0,25,0,0,0,0,9,0,0,0,0
+"ASV435","Bacteria","Actinobacteriota","Thermoleophilia","Gaiellales",NA,NA,NA,0,25,5,0,2,0,23,12,8,0,3
+"ASV437","Bacteria","Acidobacteriota","Subgroup 25",NA,NA,NA,NA,0,11,4,0,7,4,6,0,6,0,0
+"ASV438","Bacteria","Methylomirabilota","Methylomirabilia","Methylomirabilales","Methylomirabilaceae",NA,NA,0,0,21,0,9,4,0,0,0,0,0
+"ASV440","Bacteria","Chloroflexi",NA,NA,NA,NA,NA,3,69,19,0,27,3,8,0,6,17,17
+"ASV449","Bacteria","Proteobacteria","Alphaproteobacteria","Sphingomonadales","Sphingomonadaceae","Sphingopyxis",NA,0,0,10,0,0,0,15,0,8,0,0
+"ASV45","Bacteria","Patescibacteria","Gracilibacteria",NA,NA,NA,NA,0,24,0,0,3,0,0,0,8,168,217
+"ASV454","Bacteria","Acidobacteriota","Blastocatellia","Blastocatellales","Blastocatellaceae","JGI 0001001-H03",NA,0,52,0,0,0,0,20,0,17,0,10
+"ASV46","Bacteria","Methylomirabilota","Methylomirabilia","Methylomirabilales","Methylomirabilaceae","Sh765B-TzT-35",NA,65,257,0,0,0,0,22,8,17,0,0
+"ASV462","Bacteria","Planctomycetota","Phycisphaerae","S-70",NA,NA,NA,9,26,0,0,0,0,0,0,5,18,26
+"ASV463","Bacteria","Planctomycetota","OM190",NA,NA,NA,NA,8,60,2,0,9,3,18,0,31,35,67
+"ASV470","Bacteria","Myxococcota","Polyangia","Polyangiales","BIrii41",NA,NA,0,19,0,0,0,0,11,0,12,8,13
+"ASV477","Bacteria","Proteobacteria","Alphaproteobacteria","Sphingomonadales","Sphingomonadaceae","Sphingorhabdus",NA,0,0,0,0,9,0,9,0,16,0,6
+"ASV483","Bacteria","Latescibacterota","Latescibacteria","Latescibacterales","Latescibacteraceae",NA,NA,6,26,5,0,3,0,13,0,0,18,12
+"ASV485","Bacteria","Firmicutes","Bacilli","Bacillales","Planococcaceae","Paenisporosarcina",NA,0,30,0,0,0,0,0,0,0,0,0
+"ASV49","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","B1-7BS",NA,NA,66,214,58,15,44,12,67,18,42,21,26
+"ASV490","Bacteria","Desulfobacterota",NA,NA,NA,NA,NA,0,54,0,0,0,0,21,4,0,62,55
+"ASV499","Bacteria","Patescibacteria","Parcubacteria","Candidatus Nealsonbacteria",NA,NA,NA,0,12,6,0,5,0,6,0,0,0,0
+"ASV50","Bacteria","Proteobacteria","Gammaproteobacteria","Salinisphaerales","Solimonadaceae","Nevskia",NA,0,0,39,10,51,16,112,15,95,0,4
+"ASV504","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","Rhizobiaceae",NA,NA,0,0,0,0,0,29,0,0,0,0,0
+"ASV510","Bacteria","Dependentiae","Babeliae","Babeliales",NA,NA,NA,13,89,0,0,3,0,0,0,8,0,0
+"ASV515","Bacteria","Myxococcota","Polyangia","Haliangiales","Haliangiaceae","Haliangium",NA,0,44,0,0,0,0,0,0,0,5,0
+"ASV517","Bacteria","Acidobacteriota","Acidobacteriae","AMGG11",NA,NA,NA,0,10,7,0,11,0,0,0,0,0,0
+"ASV52","Bacteria","Proteobacteria","Gammaproteobacteria","Pseudomonadales","Moraxellaceae","Perlucidibaca",NA,12,46,99,27,183,0,17,10,72,24,53
+"ASV521","Bacteria","Proteobacteria","Alphaproteobacteria","Micavibrionales",NA,NA,NA,0,0,0,0,0,3,13,3,9,0,0
+"ASV525","Bacteria","Chloroflexi","OLB14",NA,NA,NA,NA,0,9,0,0,0,0,19,7,12,27,22
+"ASV53","Bacteria","Armatimonadota","Fimbriimonadia","Fimbriimonadales",NA,NA,NA,22,108,56,3,51,11,42,8,22,0,0
+"ASV531","Bacteria","Chloroflexi","P2-11E",NA,NA,NA,NA,0,15,4,0,0,0,8,0,0,0,0
+"ASV539","Bacteria","Bacteroidota","Bacteroidia","Flavobacteriales","NS9 marine group",NA,NA,0,0,0,0,0,0,0,0,0,14,13
+"ASV558","Bacteria","Proteobacteria","Alphaproteobacteria","Micropepsales","Micropepsaceae",NA,NA,0,25,0,0,0,0,17,0,0,9,0
+"ASV56","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Nitrosomonadaceae","MND1",NA,44,187,37,12,41,24,81,37,88,97,155
+"ASV560","Bacteria","Planctomycetota","Planctomycetes","Planctomycetales","Rubinisphaeraceae","Planctomicrobium",NA,0,0,0,0,0,0,0,0,0,14,12
+"ASV565","Bacteria","Firmicutes","Bacilli","Bacillales","Planococcaceae","Psychrobacillus",NA,0,25,0,0,0,0,0,0,0,0,0
+"ASV567","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","Rhizobiaceae","Allorhizobium-Neorhizobium-Pararhizobium-Rhizobium",NA,0,0,0,0,0,0,0,25,0,0,0
+"ASV570","Bacteria","Verrucomicrobiota","Verrucomicrobiae","Verrucomicrobiales","Verrucomicrobiaceae",NA,NA,0,0,0,0,0,0,0,0,0,14,11
+"ASV578","Bacteria","Planctomycetota","Planctomycetes","Pirellulales","Pirellulaceae","Pir4 lineage",NA,7,17,0,0,0,0,0,0,0,13,12
+"ASV58","Bacteria","Nitrospirota","Leptospirillia","Leptospirillales","Leptospirillaceae","Leptospirillum",NA,37,215,46,0,52,14,30,17,34,16,20
+"ASV587","Bacteria","MBNT15",NA,NA,NA,NA,NA,26,48,21,0,0,0,17,0,5,0,9
+"ASV59","Bacteria","Proteobacteria","Gammaproteobacteria","PLTA13",NA,NA,NA,121,424,39,0,19,13,115,24,116,156,198
+"ASV595","Bacteria","Proteobacteria","Gammaproteobacteria","JG36-GS-52",NA,NA,NA,0,0,0,0,0,0,0,0,0,13,11
+"ASV6","Archaea","Crenarchaeota","Nitrososphaeria","Nitrosotaleales","Nitrosotaleaceae",NA,NA,157,574,265,61,317,164,293,157,330,134,158
+"ASV60","Archaea","Crenarchaeota","Nitrososphaeria","Nitrososphaerales","Nitrososphaeraceae","Candidatus Nitrososphaera",NA,88,256,20,10,55,18,73,31,50,23,32
+"ASV603","Bacteria","Proteobacteria","Gammaproteobacteria","Pseudomonadales","Moraxellaceae","Alkanindiges",NA,0,8,8,0,14,0,0,0,9,0,0
+"ASV606","Bacteria","Bacteroidota","Bacteroidia","Cytophagales","Microscillaceae","Hassallia",NA,0,0,0,0,0,0,0,0,0,12,11
+"ASV61","Bacteria","Proteobacteria","Alphaproteobacteria","Caulobacterales","Caulobacteraceae","Caulobacter",NA,9,38,46,17,41,9,32,10,36,22,45
+"ASV613","Bacteria","Planctomycetota",NA,NA,NA,NA,NA,10,26,6,0,2,0,3,3,0,36,14
+"ASV614","Bacteria","Acidobacteriota","Subgroup 20",NA,NA,NA,NA,4,11,0,0,0,0,8,0,7,0,0
+"ASV619","Bacteria","Acidobacteriota","Acidobacteriae","Solibacterales","Solibacteraceae","Candidatus Solibacter",NA,10,37,0,0,0,0,0,0,0,0,0
+"ASV622","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Nitrosomonadaceae","Ellin6067",NA,0,0,0,0,0,5,11,0,6,0,0
+"ASV63","Bacteria","Actinobacteriota","Actinobacteria","Micrococcales","Micrococcaceae","Pseudarthrobacter",NA,33,131,15,0,11,5,35,7,18,0,0
+"ASV631","Bacteria","Planctomycetota","Phycisphaerae","Phycisphaerales","Phycisphaeraceae","Urania-1B-19 marine sediment group",NA,0,21,12,0,0,0,11,0,0,0,0
+"ASV64","Bacteria","Acidobacteriota","Acidobacteriae","Acidobacteriales",NA,NA,NA,32,145,18,0,0,0,29,0,30,0,0
+"ASV644","Archaea","Nanoarchaeota","Nanoarchaeia","Woesearchaeales","SCGC AAA011-D5",NA,NA,10,66,0,0,0,0,2,0,0,3,11
+"ASV645","Bacteria","Chloroflexi","Anaerolineae",NA,NA,NA,NA,0,27,0,0,6,0,8,0,0,0,0
+"ASV647","Bacteria","Planctomycetota","Pla4 lineage",NA,NA,NA,NA,6,38,11,0,0,0,10,0,12,14,17
+"ASV65","Bacteria","Verrucomicrobiota","Omnitrophia","Omnitrophales","Omnitrophaceae","Candidatus Omnitrophus",NA,45,307,38,4,36,0,41,17,37,280,314
+"ASV658","Bacteria","Elusimicrobiota","Elusimicrobia","Lineage IV",NA,NA,NA,0,12,0,0,0,0,3,0,8,8,12
+"ASV659","Bacteria","Planctomycetota","Phycisphaerae","Phycisphaerales","Phycisphaeraceae","SM1A02",NA,0,0,0,0,0,0,0,0,0,24,26
+"ASV660","Bacteria","Verrucomicrobiota","Kiritimatiellae","WCHB1-41",NA,NA,NA,0,0,0,0,0,0,0,0,0,15,13
+"ASV665","Bacteria","Calditrichota","Calditrichia","Calditrichales","Calditrichaceae","Calorithrix",NA,0,11,5,0,0,0,0,0,3,0,0
+"ASV668","Bacteria","Verrucomicrobiota","Omnitrophia","Omnitrophales","koll11",NA,NA,0,17,0,2,0,0,0,0,0,6,0
+"ASV676","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Comamonadaceae","Methylibium",NA,0,0,0,0,0,0,19,0,0,0,0
+"ASV678","Bacteria","Cyanobacteria","Vampirivibrionia","Obscuribacterales","Obscuribacteraceae",NA,NA,0,0,0,0,0,3,0,0,0,6,13
+"ASV681","Bacteria","Bacteroidota","Bacteroidia",NA,NA,NA,NA,0,3,0,0,0,0,0,0,0,10,9
+"ASV687","Bacteria","Planctomycetota","Planctomycetes","Planctomycetales","Rubinisphaeraceae","SH-PL14",NA,5,13,0,0,0,0,0,0,0,0,0
+"ASV692","Bacteria","Verrucomicrobiota","Verrucomicrobiae","Methylacidiphilales","Methylacidiphilaceae",NA,NA,0,18,0,0,0,0,0,0,0,0,0
+"ASV7","Bacteria","Nitrospirota","Nitrospiria","Nitrospirales","Nitrospiraceae","Nitrospira",NA,427,1469,241,36,254,91,413,105,379,387,491
+"ASV712","Bacteria","Armatimonadota","Fimbriimonadia","Fimbriimonadales","Fimbriimonadaceae",NA,NA,0,24,0,0,0,0,0,0,0,0,16
+"ASV715","Bacteria","Elusimicrobiota","Lineage IIa",NA,NA,NA,NA,0,28,0,0,0,0,0,0,0,7,6
+"ASV72","Bacteria","Acidobacteriota","Subgroup 21",NA,NA,NA,NA,22,78,12,0,0,0,23,16,17,40,23
+"ASV720","Bacteria","Chloroflexi","TK10",NA,NA,NA,NA,0,17,0,0,0,0,0,0,8,0,0
+"ASV721","Bacteria","Proteobacteria","Alphaproteobacteria","Puniceispirillales","EF100-94H03",NA,NA,0,17,0,0,0,0,9,0,0,0,0
+"ASV722","Bacteria","Acidobacteriota","Subgroup 18",NA,NA,NA,NA,0,17,0,0,9,0,0,0,6,0,0
+"ASV746","Bacteria","Proteobacteria","Gammaproteobacteria","Gammaproteobacteria Incertae Sedis","Unknown Family","Candidatus Ovatusbacter",NA,0,16,0,0,0,0,0,0,0,0,0
+"ASV755","Bacteria","Firmicutes","Bacilli","Paenibacillales","Paenibacillaceae",NA,NA,0,16,0,0,0,0,0,0,0,0,0
+"ASV76","Bacteria","Acidobacteriota","Blastocatellia","Pyrinomonadales","Pyrinomonadaceae","RB41",NA,47,214,35,7,30,0,26,13,49,20,17
+"ASV787","Bacteria","Proteobacteria","Alphaproteobacteria","Holosporales","Holosporaceae",NA,NA,0,7,0,0,0,0,0,0,0,3,5
+"ASV79","Bacteria","Latescibacterota",NA,NA,NA,NA,NA,25,236,40,2,47,0,115,9,86,59,76
+"ASV792","Bacteria","Verrucomicrobiota","Chlamydiae","Chlamydiales","Simkaniaceae",NA,NA,0,15,0,0,0,0,0,0,0,8,2
+"ASV794","Bacteria","Elusimicrobiota","Elusimicrobia","FCPU453",NA,NA,NA,0,15,0,0,0,0,6,0,0,0,0
+"ASV8","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","TRA3-20",NA,NA,384,1302,163,10,194,41,236,43,234,70,89
+"ASV80","Bacteria","Proteobacteria","Gammaproteobacteria","Pseudomonadales","Oleiphilaceae","Oleiphilus",NA,0,11,67,0,63,0,29,0,12,12,14
+"ASV803","Bacteria","Patescibacteria","Parcubacteria","Candidatus Jorgensenbacteria",NA,NA,NA,0,7,8,3,3,0,0,0,0,0,4
+"ASV804","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","Methyloligellaceae",NA,NA,0,0,15,0,0,0,0,0,0,0,0
+"ASV812","Bacteria","Patescibacteria","Parcubacteria","Candidatus Colwellbacteria",NA,NA,NA,0,0,0,0,0,0,0,0,5,5,10
+"ASV814","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Nitrosomonadaceae","Nitrosomonas",NA,0,0,0,0,0,0,0,0,0,9,6
+"ASV82","Archaea","Crenarchaeota","Nitrososphaeria","Nitrosopumilales","Nitrosopumilaceae","Nitrosarchaeum",NA,0,0,0,0,7,0,0,0,0,108,180
+"ASV823","Bacteria","Bacteroidota","Bacteroidia","Sphingobacteriales","KD3-93",NA,NA,7,0,0,0,0,0,0,0,7,0,0
+"ASV826","Bacteria","Proteobacteria","Gammaproteobacteria","Gammaproteobacteria Incertae Sedis","Unknown Family","Candidatus Berkiella",NA,4,10,0,0,0,0,0,0,0,0,0
+"ASV827","Bacteria","Firmicutes","Clostridia","Oscillospirales","Hungateiclostridiaceae","Ruminiclostridium",NA,0,14,0,0,0,0,0,0,0,0,0
+"ASV829","Archaea",NA,NA,NA,NA,NA,NA,0,14,0,0,0,0,0,0,0,0,0
+"ASV831","Bacteria","Bacteroidota","Bacteroidia","Chitinophagales","37-13",NA,NA,0,21,0,0,0,0,0,0,0,0,0
+"ASV835","Bacteria","Dependentiae","Babeliae","Babeliales","Vermiphilaceae",NA,NA,0,30,0,0,6,0,0,0,7,0,0
+"ASV837","Bacteria","Chloroflexi","Chloroflexia","Chloroflexales","Roseiflexaceae",NA,NA,0,13,0,0,0,0,2,0,3,0,0
+"ASV843","Bacteria","Planctomycetota","Planctomycetes","Planctomycetales",NA,NA,NA,0,14,0,0,0,0,0,0,0,0,11
+"ASV855","Bacteria","Proteobacteria","Alphaproteobacteria","Reyranellales","Reyranellaceae",NA,NA,0,0,0,0,0,0,7,14,0,6,0
+"ASV856","Bacteria","WS2",NA,NA,NA,NA,NA,0,0,0,0,0,0,0,0,0,9,8
+"ASV859","Bacteria","Bacteroidota","Bacteroidia","Chitinophagales","Saprospiraceae","Portibacter",NA,0,0,0,0,0,0,0,0,0,8,6
+"ASV866","Bacteria","Patescibacteria","Parcubacteria",NA,NA,NA,NA,2,34,12,0,17,0,3,0,7,0,21
+"ASV871","Archaea","Aenigmarchaeota","Deep Sea Euryarchaeotic Group(DSEG)",NA,NA,NA,NA,0,10,0,0,0,0,0,0,3,0,0
+"ASV873","Bacteria","Proteobacteria","Gammaproteobacteria","Diplorickettsiales","Diplorickettsiaceae","Aquicella",NA,0,11,0,0,0,2,0,0,0,0,6
+"ASV874","Bacteria","Chloroflexi","Anaerolineae","SBR1031","A4b",NA,NA,0,40,0,0,0,0,0,0,0,4,8
+"ASV876","Bacteria","Armatimonadota","Chthonomonadetes","Chthonomonadales",NA,NA,NA,0,5,2,0,6,0,0,0,0,0,0
+"ASV877","Bacteria","Armatimonadota",NA,NA,NA,NA,NA,0,13,3,2,2,0,0,0,0,6,0
+"ASV887","Bacteria","Proteobacteria","Alphaproteobacteria","Defluviicoccales",NA,NA,NA,0,0,6,0,0,0,0,0,7,10,0
+"ASV89","Bacteria","Proteobacteria","Alphaproteobacteria",NA,NA,NA,NA,39,208,31,0,24,11,51,0,49,61,100
+"ASV897","Archaea","Iainarchaeota","Iainarchaeia","Iainarchaeales","Candidatus Iainarchaeum",NA,NA,0,0,0,0,0,0,0,0,0,9,4
+"ASV9","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Oxalobacteraceae","Actimicrobium",NA,0,38,477,95,508,41,148,31,133,39,30
+"ASV90","Bacteria","Chloroflexi","Dehalococcoidia","S085",NA,NA,NA,16,152,27,0,35,20,79,16,78,120,104
+"ASV907","Bacteria","Actinobacteriota","Acidimicrobiia","Microtrichales","Microtrichaceae",NA,NA,0,0,0,0,0,0,0,0,0,0,13
+"ASV91","Bacteria","Acidobacteriota","Subgroup 11",NA,NA,NA,NA,22,94,13,2,13,0,20,0,0,19,16
+"ASV910","Bacteria","Bacteroidota","Bacteroidia","Sphingobacteriales",NA,NA,NA,0,20,0,0,6,0,0,0,0,0,4
+"ASV911","Bacteria","Actinobacteriota","Actinobacteria","Propionibacteriales","Nocardioidaceae","Nocardioides",NA,0,12,5,0,0,0,0,0,7,0,0
+"ASV912","Archaea","Aenigmarchaeota","Aenigmarchaeia","Aenigmarchaeales",NA,NA,NA,0,15,0,0,0,0,3,2,0,0,0
+"ASV915","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Nitrosomonadaceae",NA,NA,0,8,0,0,0,0,4,0,0,0,0
+"ASV916","Bacteria","Proteobacteria","Gammaproteobacteria","Burkholderiales","Oxalobacteraceae","Janthinobacterium",NA,0,12,0,0,0,0,0,0,0,0,0
+"ASV917","Bacteria","RCP2-54",NA,NA,NA,NA,NA,0,12,0,0,0,0,0,0,0,0,7
+"ASV927","Bacteria","Actinobacteriota","Acidimicrobiia","Microtrichales","Iamiaceae","Iamia",NA,0,0,12,0,0,0,0,0,0,0,0
+"ASV93","Bacteria","Proteobacteria","Alphaproteobacteria","Rhizobiales","Xanthobacteraceae",NA,NA,0,0,43,14,49,0,0,0,41,0,43
+"ASV94","Bacteria","Planctomycetota","Planctomycetes","Pirellulales","Pirellulaceae","Rhodopirellula",NA,21,110,7,0,7,4,9,7,7,10,7
+"ASV946","Bacteria","Actinobacteriota","Acidimicrobiia","Microtrichales",NA,NA,NA,0,4,0,0,0,0,0,0,0,12,5
+"ASV958","Bacteria","Actinobacteriota","Actinobacteria","Propionibacteriales","Nocardioidaceae",NA,NA,4,7,0,0,0,0,0,0,0,0,0
+"ASV960","Bacteria","Bacteroidota","Bacteroidia","Chitinophagales","Chitinophagaceae","Dinghuibacter",NA,0,11,0,0,0,0,0,0,0,0,0
+"ASV962","Bacteria","Planctomycetota","Planctomycetes",NA,NA,NA,NA,0,18,2,0,0,0,0,0,0,0,0
+"ASV966","Bacteria","Fibrobacterota","Fibrobacteria","Fibrobacterales","Fibrobacteraceae",NA,NA,0,3,0,0,0,0,0,0,0,6,8
+"ASV968","Bacteria","Verrucomicrobiota","Verrucomicrobiae","Chthoniobacterales","Xiphinematobacteraceae","Candidatus Xiphinematobacter",NA,0,11,0,0,0,2,0,0,0,0,0
+"ASV97","Bacteria","Firmicutes","Clostridia","Clostridiales","Caloramatoraceae","Fonticella",NA,21,157,0,0,0,0,0,0,0,0,0
+"ASV973","Bacteria","Planctomycetota","Phycisphaerae","C86",NA,NA,NA,0,4,2,0,0,0,0,0,5,0,0
+"ASV978","Bacteria","Bacteroidota","Bacteroidia","Sphingobacteriales","env.OPS 17",NA,NA,0,0,6,0,8,0,0,0,0,0,0
+"ASV98","Bacteria","NB1-j",NA,NA,NA,NA,NA,23,113,7,3,12,8,66,5,53,80,109
+"ASV989","Bacteria","Methylomirabilota","Methylomirabilia","Rokubacteriales","WX65",NA,NA,0,0,0,0,0,0,11,0,0,0,0
