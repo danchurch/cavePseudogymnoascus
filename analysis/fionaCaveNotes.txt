@@ -314,7 +314,7 @@ fastqc testeukcat.fastq \
 -o fastQCoutputs \
 --extract
 
-## yeah the shitiness is all in the eukaryotic dataset
+## yeah the problem is all in the eukaryotic dataset
 
 ## so now what? Seems like here we branch into to two 
 ## sub-projects. 
@@ -498,9 +498,7 @@ plotErrors(errF, nominalQ=TRUE)
 
 dev.off()
 
-## that is sufficiently fucked up looking.
-
-## I do not know why we are bothering with this data...
+## that is sufficiently messed up 
 
 ## tomorrow, derep, dechimera, tax it up, etc.
 
@@ -547,7 +545,7 @@ dadaProksPooled
 ## method (unpooled). 
 
 ## we may have to use an OTU approach anyway, to soften the 
-## rough edges of this shitty data
+## rough edges of this data
 
 ####### make sequence table ########
 
@@ -861,11 +859,11 @@ echo ${#f16s} ## 19 bp.
 ## we also need to track which samples of members of these and how many.
 ## jeezus. 
 
-## this is way too much work for an unpublishable data set. 
+## this is not a publishable dataset, but this will work for a thesis, I think.
 
 ## new plan - use the taxonomy table from the asvs, collapse it by genus. 
 
-## then treat genus as our otus. This will work for a thesis, I think.
+## then treat genus as our otus. 
 
 ## so back into dada2/phyloseq
 
@@ -1196,4 +1194,39 @@ write.csv(cc, file='fiona16sTaxReadAbundencesByPoolTable.csv')
 ## what else? we need to get the black boxes out of the stacked bargraph
 
 ## so just recolor them by genus?
+
+#############################
+
+## recent request by tillmann - 
+
+## redo the by-pool abundances, broken apart by sample
+
+## forgot that they want to do everything by genus, not asv...
+
+ps.genus = tax_glom(ps, "Genus", NArm=FALSE)
+
+## this OTU table, what does it look like?
+
+t(otu_table(ps.genus))
+
+t(otu_table(ps))
+
+## first, to make exactly the table tillmann requested,
+## I think this is the pipeline we need:
+
+ps.genus = tax_glom(ps, "Genus", NArm=FALSE)
+
+aa <- tax_table(ps.genus)
+bb <- t(otu_table(ps.genus))
+cc <- merge(aa,bb, by="row.names")
+colnames(cc)[colnames(cc) == "Row.names"] = "repASV"
+
+## just check, any issues there?
+unique(cc$Genus)
+dd <- cc$Genus[!is.na(cc$Genus)]
+duplicated(dd)
+## looks okay
+
+write.csv(cc, file= "./graphicsTables/genusBySampleWithRawReadAbundances.csv", row.names=FALSE)
+
 
